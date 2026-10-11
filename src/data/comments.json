@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cm1",
+    "courseSlug": "starting-seo-as-your-home",
+    "author": "Yara Mansour",
+    "avatar": "/images/avatars/a1.webp",
+    "date": "2021-10-10",
+    "text": "The part about search intent finally made keyword research click for me. I rewrote two landing pages the same evening and both are ranking better already."
+  },
+  {
+    "id": "cm2",
+    "courseSlug": "starting-seo-as-your-home",
+    "author": "Tarek Hassan",
+    "avatar": "/images/avatars/a2.webp",
+    "date": "2021-10-15",
+    "text": "Could you add a worked example for an e-commerce category page? The blog example was clear but product pages behave differently."
+  },
+  {
+    "id": "cm3",
+    "courseSlug": "starting-seo-as-your-home",
+    "author": "Lina Abdelrahman",
+    "avatar": "/images/avatars/a3.webp",
+    "date": "2021-10-19",
+    "text": "Watched the Core Web Vitals lesson twice. The layout shift walkthrough alone was worth the whole course."
+  },
+  {
+    "id": "cm4",
+    "courseSlug": "modern-javascript-from-scratch",
+    "author": "Khaled Fathy",
+    "avatar": "/images/avatars/a4.webp",
+    "date": "2022-02-03",
+    "text": "Best explanation of closures I have seen. The drawing of the event loop is now a sticky note on my monitor."
+  },
+  {
+    "id": "cm5",
+    "courseSlug": "modern-javascript-from-scratch",
+    "author": "Salma Gamal",
+    "avatar": "/images/avatars/a5.webp",
+    "date": "2022-02-11",
+    "text": "Small note: the AbortController example throws on older Safari. Worth a warning in the lesson."
+  },
+  {
+    "id": "cm6",
+    "courseSlug": "advanced-css-layouts",
+    "author": "Mostafa Nabil",
+    "avatar": "/images/avatars/a6.webp",
+    "date": "2023-05-22",
+    "text": "Container queries were the missing piece. I deleted about a hundred lines of breakpoints from our design system after week one."
+  },
+  {
+    "id": "cm7",
+    "courseSlug": "react-performance",
+    "author": "Dina Sobhy",
+    "avatar": "/images/avatars/a2.webp",
+    "date": "2023-09-07",
+    "text": "Thank you for leading with the profiler instead of memo. Half our slow renders turned out to be an unstable context value."
+  },
+  {
+    "id": "cm8",
+    "courseSlug": "flutter-for-absolute-beginners",
+    "author": "Ahmed Saeed",
+    "avatar": "/images/avatars/a4.webp",
+    "date": "2024-01-18",
+    "text": "First course where I actually shipped something to the store. The publishing lesson is very underrated."
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "starting-seo-as-your-home": [
+    {
+      "rank": 1,
+      "name": "Yara Mansour",
+      "avatar": "/images/avatars/a1.webp",
+      "points": 2840,
+      "isYou": false
+    },
+    {
+      "rank": 2,
+      "name": "Mostafa Nabil",
+      "avatar": "/images/avatars/a6.webp",
+      "points": 2715,
+      "isYou": false
+    },
+    {
+      "rank": 3,
+      "name": "Lina Abdelrahman",
+      "avatar": "/images/avatars/a3.webp",
+      "points": 2590,
+      "isYou": false
+    },
+    {
+      "rank": 4,
+      "name": "You",
+      "avatar": "/images/avatars/a5.webp",
+      "points": 2410,
+      "isYou": true
+    },
+    {
+      "rank": 5,
+      "name": "Tarek Hassan",
+      "avatar": "/images/avatars/a2.webp",
+      "points": 2280,
+      "isYou": false
+    },
+    {
+      "rank": 6,
+      "name": "Khaled Fathy",
+      "avatar": "/images/avatars/a4.webp",
+      "points": 2105,
+      "isYou": false
+    }
+  ]
+}

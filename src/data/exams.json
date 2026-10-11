@@ -1,0 +1,344 @@
+{
+  "starting-seo-as-your-home-exam1": {
+    "id": "starting-seo-as-your-home-exam1",
+    "title": "Mid-Course Exam",
+    "timeLimit": 600,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Which signal tells a search engine that two URLs are the same page?",
+        "options": [
+          "A sitemap entry",
+          "A canonical tag",
+          "A nofollow link",
+          "An H1 heading"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q2",
+        "text": "A searcher types \"best running shoes 2024\". What is the dominant search intent?",
+        "options": [
+          "Navigational",
+          "Transactional",
+          "Commercial investigation",
+          "Informational"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "q3",
+        "text": "Which Core Web Vital measures visual stability?",
+        "options": ["LCP", "INP", "CLS", "TTFB"],
+        "answer": 2
+      },
+      {
+        "id": "q4",
+        "text": "What does a 301 response tell a crawler?",
+        "options": [
+          "The page moved permanently",
+          "The page is temporarily unavailable",
+          "The page should not be indexed",
+          "The page requires authentication"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "q5",
+        "text": "Structured data is added to a page mainly to:",
+        "options": [
+          "Improve page load time",
+          "Describe the content so it can qualify for rich results",
+          "Block competitors from scraping",
+          "Replace the meta description"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "starting-seo-as-your-home-exam2": {
+    "id": "starting-seo-as-your-home-exam2",
+    "title": "Final Exam",
+    "timeLimit": 900,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Largest Contentful Paint is considered good at or under:",
+        "options": ["1.0s", "2.5s", "4.0s", "6.0s"],
+        "answer": 1
+      },
+      {
+        "id": "q2",
+        "text": "Which of these most directly reduces layout shift?",
+        "options": [
+          "Lazy loading every image",
+          "Reserving width and height for media",
+          "Minifying CSS",
+          "Adding a service worker"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q3",
+        "text": "Internal linking mainly helps because it:",
+        "options": [
+          "Increases domain age",
+          "Distributes crawl paths and relevance between pages",
+          "Removes the need for a sitemap",
+          "Changes the canonical URL"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q4",
+        "text": "Which report shows the queries a page already ranks for?",
+        "options": [
+          "Search Console performance report",
+          "Analytics realtime report",
+          "Lighthouse accessibility audit",
+          "robots.txt"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "q5",
+        "text": "A page is indexed but gets no clicks. The first thing to review is:",
+        "options": [
+          "The server location",
+          "The title and meta description against the query intent",
+          "The CSS file size",
+          "The number of outbound links"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "modern-javascript-from-scratch-exam1": {
+    "id": "modern-javascript-from-scratch-exam1",
+    "title": "Checkpoint Exam",
+    "timeLimit": 600,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What does accessing a `let` binding before its declaration throw?",
+        "options": ["undefined", "ReferenceError", "TypeError", "SyntaxError"],
+        "answer": 1
+      },
+      {
+        "id": "q2",
+        "text": "`typeof null` returns:",
+        "options": ["\"null\"", "\"undefined\"", "\"object\"", "\"number\""],
+        "answer": 2
+      },
+      {
+        "id": "q3",
+        "text": "An arrow function takes its `this` from:",
+        "options": [
+          "The object it is called on",
+          "The enclosing lexical scope",
+          "The global object, always",
+          "Whatever is passed to call()"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q4",
+        "text": "Which runs first after the current task finishes?",
+        "options": [
+          "setTimeout(fn, 0)",
+          "A resolved promise callback",
+          "requestAnimationFrame",
+          "setInterval(fn, 0)"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q5",
+        "text": "`Object.freeze(obj)` prevents:",
+        "options": [
+          "Reading properties",
+          "Adding, removing or changing own properties",
+          "Changing nested object properties",
+          "Garbage collection"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "flutter-for-absolute-beginners-exam1": {
+    "id": "flutter-for-absolute-beginners-exam1",
+    "title": "Final Exam",
+    "timeLimit": 540,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "A widget that never changes after it is built should extend:",
+        "options": [
+          "StatefulWidget",
+          "StatelessWidget",
+          "InheritedWidget",
+          "RenderObject"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q2",
+        "text": "`setState` is used to:",
+        "options": [
+          "Rebuild the widget with new state",
+          "Navigate to a new route",
+          "Create a new isolate",
+          "Register a plugin"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "q3",
+        "text": "Which widget makes a child fill the remaining space in a Row?",
+        "options": ["Padding", "Center", "Expanded", "SizedBox"],
+        "answer": 2
+      },
+      {
+        "id": "q4",
+        "text": "`Navigator.push` expects:",
+        "options": ["A String path", "A Route", "A Widget", "A BuildContext only"],
+        "answer": 1
+      },
+      {
+        "id": "q5",
+        "text": "`FutureBuilder` is most useful for:",
+        "options": [
+          "Rendering UI that depends on an async result",
+          "Animating a widget",
+          "Caching images",
+          "Defining a theme"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "advanced-css-layouts-exam1": {
+    "id": "advanced-css-layouts-exam1",
+    "title": "Layout Exam",
+    "timeLimit": 600,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "`clamp(1rem, 2vw + 0.5rem, 2rem)` returns:",
+        "options": [
+          "Always 2vw + 0.5rem",
+          "The middle value, bounded by the first and last",
+          "The largest of the three",
+          "The smallest of the three"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q2",
+        "text": "A container query responds to the size of:",
+        "options": [
+          "The viewport",
+          "The nearest containment context",
+          "The root font size",
+          "The document body"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q3",
+        "text": "`grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))` gives you:",
+        "options": [
+          "A fixed three-column grid",
+          "Columns that wrap and stretch to fill the row",
+          "A single scrolling row",
+          "Equal columns of exactly 240px"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q4",
+        "text": "Which property pair is logical rather than physical?",
+        "options": [
+          "margin-left / margin-right",
+          "padding-inline-start / padding-inline-end",
+          "top / bottom",
+          "float: left"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q5",
+        "text": "The usual cause of unexpected horizontal scroll is:",
+        "options": [
+          "A child wider than its container, often from a fixed width",
+          "Too many grid rows",
+          "Using rem units",
+          "A missing viewport meta tag only"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "react-performance-exam1": {
+    "id": "react-performance-exam1",
+    "title": "Performance Exam",
+    "timeLimit": 540,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "`React.memo` skips a re-render when:",
+        "options": [
+          "State changes inside the component",
+          "Props are shallowly equal to the previous props",
+          "The parent re-renders for any reason",
+          "A context value changes"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q2",
+        "text": "Passing an inline object as a prop causes a re-render because:",
+        "options": [
+          "Objects are expensive to create",
+          "A new reference is created on every render",
+          "React deep-compares props",
+          "It breaks the rules of hooks"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q3",
+        "text": "Before optimising, you should:",
+        "options": [
+          "Wrap everything in useMemo",
+          "Profile and find the actual cost",
+          "Split every component",
+          "Disable StrictMode"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "q4",
+        "text": "List virtualisation helps because it:",
+        "options": [
+          "Renders only the visible rows",
+          "Compresses the data",
+          "Removes keys from the list",
+          "Moves rendering to a worker"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "q5",
+        "text": "An unstable context value is a problem because:",
+        "options": [
+          "It throws in development",
+          "Every consumer re-renders whenever the provider renders",
+          "It disables Suspense",
+          "It prevents code splitting"
+        ],
+        "answer": 1
+      }
+    ]
+  }
+}

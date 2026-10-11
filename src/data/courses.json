@@ -1,0 +1,843 @@
+[
+  {
+    "id": "c1",
+    "slug": "starting-seo-as-your-home",
+    "title": "Starting SEO as your Home",
+    "instructor": "Eng. Ali Shaheen",
+    "shortDescription": "Rank your pages the honest way: keyword research, on-page structure and the technical fixes that actually move traffic.",
+    "image": "/images/starting-seo-as-your-home.webp",
+    "materials": {
+      "durationHours": 12,
+      "enrolled": 65,
+      "language": "English"
+    },
+    "weeks": [
+      {
+        "id": "starting-seo-as-your-home-w1",
+        "title": "Week 1-4",
+        "description": "Advanced story telling techniques for writers: Personas, Characters & Plots",
+        "lessons": [
+          {
+            "id": "starting-seo-as-your-home-l1",
+            "title": "Introduction",
+            "type": "video",
+            "duration": 8,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l2",
+            "title": "Course Overview",
+            "type": "video",
+            "duration": 12,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l3",
+            "title": "How Search Engines Read a Page",
+            "type": "video",
+            "duration": 10,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l4",
+            "title": "Course Exercise / Reference Files",
+            "type": "pdf",
+            "duration": 5,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "pdfUrl": "/pdfs/lesson.pdf"
+          },
+          {
+            "id": "starting-seo-as-your-home-l5",
+            "title": "Code Editor Installation (Optional if you have one)",
+            "type": "video",
+            "duration": 14,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l6",
+            "title": "Embedding PHP in HTML",
+            "type": "video",
+            "duration": 18,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          }
+        ]
+      },
+      {
+        "id": "starting-seo-as-your-home-w2",
+        "title": "Week 5-8",
+        "description": "Keyword research, search intent and building a content map that compounds.",
+        "lessons": [
+          {
+            "id": "starting-seo-as-your-home-l7",
+            "title": "Defining Your Seed Keywords",
+            "type": "video",
+            "duration": 11,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l8",
+            "title": "Search Intent in Practice",
+            "type": "video",
+            "duration": 16,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l9",
+            "title": "Return Values From Functions",
+            "type": "video",
+            "duration": 15,
+            "questionsCount": 2,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l10",
+            "title": "Keyword Mapping Worksheet",
+            "type": "pdf",
+            "duration": 6,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "pdfUrl": "/pdfs/lesson.pdf"
+          },
+          {
+            "id": "starting-seo-as-your-home-l11",
+            "title": "Newer Way of Creating a Content Brief",
+            "type": "video",
+            "duration": 13,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l12",
+            "title": "Mid-Course Exam",
+            "type": "exam",
+            "duration": 20,
+            "questionsCount": 5,
+            "locked": false,
+            "completed": false,
+            "examId": "starting-seo-as-your-home-exam1"
+          }
+        ]
+      },
+      {
+        "id": "starting-seo-as-your-home-w3",
+        "title": "Week 9-12",
+        "description": "Technical SEO, Core Web Vitals and measuring what the business cares about.",
+        "lessons": [
+          {
+            "id": "starting-seo-as-your-home-l13",
+            "title": "Core Web Vitals Explained",
+            "type": "video",
+            "duration": 17,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l14",
+            "title": "Fixing Layout Shift",
+            "type": "video",
+            "duration": 12,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l15",
+            "title": "Structured Data and Rich Results",
+            "type": "video",
+            "duration": 19,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l16",
+            "title": "Technical Audit Checklist",
+            "type": "pdf",
+            "duration": 7,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "pdfUrl": "/pdfs/lesson.pdf"
+          },
+          {
+            "id": "starting-seo-as-your-home-l17",
+            "title": "Reporting to Stakeholders",
+            "type": "video",
+            "duration": 14,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "starting-seo-as-your-home-l18",
+            "title": "Final Exam",
+            "type": "exam",
+            "duration": 25,
+            "questionsCount": 5,
+            "locked": true,
+            "completed": false,
+            "examId": "starting-seo-as-your-home-exam2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c2",
+    "slug": "modern-javascript-from-scratch",
+    "title": "Modern JavaScript From Scratch",
+    "instructor": "Eng. Mariam Fouad",
+    "shortDescription": "From variables to async/await, with the browser APIs you will reach for every single day.",
+    "image": "/images/modern-javascript-from-scratch.webp",
+    "materials": {
+      "durationHours": 18,
+      "enrolled": 1240,
+      "language": "English"
+    },
+    "weeks": [
+      {
+        "id": "modern-javascript-from-scratch-w1",
+        "title": "Week 1-2",
+        "description": "The language core: values, scope and functions.",
+        "lessons": [
+          {
+            "id": "modern-javascript-from-scratch-l1",
+            "title": "Values, Types and Coercion",
+            "type": "video",
+            "duration": 15,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l2",
+            "title": "Scope, Closures and the TDZ",
+            "type": "video",
+            "duration": 22,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l3",
+            "title": "Functions as First-Class Values",
+            "type": "video",
+            "duration": 18,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l4",
+            "title": "Practice Files",
+            "type": "pdf",
+            "duration": 4,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "pdfUrl": "/pdfs/lesson.pdf"
+          }
+        ]
+      },
+      {
+        "id": "modern-javascript-from-scratch-w2",
+        "title": "Week 3-4",
+        "description": "Objects, prototypes and the parts of `this` nobody explains.",
+        "lessons": [
+          {
+            "id": "modern-javascript-from-scratch-l5",
+            "title": "Objects and Property Descriptors",
+            "type": "video",
+            "duration": 16,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l6",
+            "title": "Prototypes Without the Mystery",
+            "type": "video",
+            "duration": 24,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l7",
+            "title": "Binding `this` Four Ways",
+            "type": "video",
+            "duration": 13,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l8",
+            "title": "Classes and Private Fields",
+            "type": "video",
+            "duration": 17,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l9",
+            "title": "Checkpoint Exam",
+            "type": "exam",
+            "duration": 15,
+            "questionsCount": 5,
+            "locked": true,
+            "completed": false,
+            "examId": "modern-javascript-from-scratch-exam1"
+          }
+        ]
+      },
+      {
+        "id": "modern-javascript-from-scratch-w3",
+        "title": "Week 5-6",
+        "description": "Asynchrony: the event loop, promises and real network code.",
+        "lessons": [
+          {
+            "id": "modern-javascript-from-scratch-l10",
+            "title": "The Event Loop, Drawn Out",
+            "type": "video",
+            "duration": 20,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l11",
+            "title": "Promises From First Principles",
+            "type": "video",
+            "duration": 26,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l12",
+            "title": "async / await and Error Handling",
+            "type": "video",
+            "duration": 19,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l13",
+            "title": "Fetch, AbortController and Retries",
+            "type": "video",
+            "duration": 21,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "modern-javascript-from-scratch-l14",
+            "title": "Async Cheat Sheet",
+            "type": "pdf",
+            "duration": 5,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "pdfUrl": "/pdfs/lesson.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c3",
+    "slug": "flutter-for-absolute-beginners",
+    "title": "Flutter for Absolute Beginners",
+    "instructor": "Eng. Omar Khalil",
+    "shortDescription": "Build and ship your first cross-platform app, one widget at a time.",
+    "image": "/images/flutter-for-absolute-beginners.webp",
+    "materials": {
+      "durationHours": 9,
+      "enrolled": 430,
+      "language": "Arabic"
+    },
+    "weeks": [
+      {
+        "id": "flutter-for-absolute-beginners-w1",
+        "title": "Week 1",
+        "description": "Setting up and understanding the widget tree.",
+        "lessons": [
+          {
+            "id": "flutter-for-absolute-beginners-l1",
+            "title": "Installing the SDK",
+            "type": "video",
+            "duration": 12,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l2",
+            "title": "Your First Widget",
+            "type": "video",
+            "duration": 14,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l3",
+            "title": "Stateless vs Stateful",
+            "type": "video",
+            "duration": 16,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l4",
+            "title": "Layout: Row, Column, Expanded",
+            "type": "video",
+            "duration": 18,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l5",
+            "title": "Widget Reference Sheet",
+            "type": "pdf",
+            "duration": 4,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "pdfUrl": "/pdfs/lesson.pdf"
+          }
+        ]
+      },
+      {
+        "id": "flutter-for-absolute-beginners-w2",
+        "title": "Week 2",
+        "description": "Navigation, state and talking to an API.",
+        "lessons": [
+          {
+            "id": "flutter-for-absolute-beginners-l6",
+            "title": "Routes and Navigation",
+            "type": "video",
+            "duration": 15,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l7",
+            "title": "Lifting State Up",
+            "type": "video",
+            "duration": 17,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l8",
+            "title": "Calling a REST API",
+            "type": "video",
+            "duration": 20,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l9",
+            "title": "Showing Loading and Error States",
+            "type": "video",
+            "duration": 13,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l10",
+            "title": "Publishing to the Stores",
+            "type": "video",
+            "duration": 11,
+            "questionsCount": 0,
+            "locked": true,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "flutter-for-absolute-beginners-l11",
+            "title": "Final Exam",
+            "type": "exam",
+            "duration": 18,
+            "questionsCount": 5,
+            "locked": true,
+            "completed": false,
+            "examId": "flutter-for-absolute-beginners-exam1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c4",
+    "slug": "advanced-css-layouts",
+    "title": "Advanced CSS Layouts: Grid, Flexbox and Container Queries for Real Production Interfaces",
+    "instructor": "Eng. Nour El-Sayed",
+    "shortDescription": "Stop fighting your layout. Learn the model behind Grid, Flexbox and container queries, then use it on real screens.",
+    "image": "/images/advanced-css-layouts.webp",
+    "materials": {
+      "durationHours": 7,
+      "enrolled": 318,
+      "language": "English"
+    },
+    "weeks": [
+      {
+        "id": "advanced-css-layouts-w1",
+        "title": "Week 1-2",
+        "description": "The box model you thought you knew, and intrinsic sizing.",
+        "lessons": [
+          {
+            "id": "advanced-css-layouts-l1",
+            "title": "Intrinsic vs Extrinsic Sizing",
+            "type": "video",
+            "duration": 14,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l2",
+            "title": "min(), max(), clamp()",
+            "type": "video",
+            "duration": 11,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l3",
+            "title": "Flexbox: The Three Properties That Matter",
+            "type": "video",
+            "duration": 19,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l4",
+            "title": "Grid Template Areas",
+            "type": "video",
+            "duration": 22,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l5",
+            "title": "Subgrid in Production",
+            "type": "video",
+            "duration": 16,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l6",
+            "title": "Container Queries",
+            "type": "video",
+            "duration": 18,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l7",
+            "title": "Layout Recipes",
+            "type": "pdf",
+            "duration": 6,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "pdfUrl": "/pdfs/lesson.pdf"
+          }
+        ]
+      },
+      {
+        "id": "advanced-css-layouts-w2",
+        "title": "Week 3-4",
+        "description": "Responsive without breakpoint soup.",
+        "lessons": [
+          {
+            "id": "advanced-css-layouts-l8",
+            "title": "Killing the Breakpoint Habit",
+            "type": "video",
+            "duration": 15,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l9",
+            "title": "Fluid Type Scales",
+            "type": "video",
+            "duration": 12,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l10",
+            "title": "Logical Properties and RTL",
+            "type": "video",
+            "duration": 17,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l11",
+            "title": "Scroll-Driven Animations",
+            "type": "video",
+            "duration": 20,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l12",
+            "title": "Debugging Overflow",
+            "type": "video",
+            "duration": 9,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "advanced-css-layouts-l13",
+            "title": "Layout Exam",
+            "type": "exam",
+            "duration": 20,
+            "questionsCount": 5,
+            "locked": false,
+            "completed": true,
+            "examId": "advanced-css-layouts-exam1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c5",
+    "slug": "python",
+    "title": "Python",
+    "instructor": "Eng. Hana Adel",
+    "shortDescription": "The short, no-filler introduction. Two sittings and you are writing scripts.",
+    "image": "/images/python.webp",
+    "materials": {
+      "durationHours": 2,
+      "enrolled": 97,
+      "language": "English"
+    },
+    "weeks": [
+      {
+        "id": "python-w1",
+        "title": "Week 1",
+        "description": "Everything you need to write your first useful script.",
+        "lessons": [
+          {
+            "id": "python-l1",
+            "title": "Syntax in 20 Minutes",
+            "type": "video",
+            "duration": 20,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "python-l2",
+            "title": "Files, Loops and the Standard Library",
+            "type": "video",
+            "duration": 24,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": false,
+            "videoUrl": "/videos/lesson.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c6",
+    "slug": "react-performance",
+    "title": "React Performance",
+    "instructor": "Eng. Ali Shaheen",
+    "shortDescription": "Profile first, then fix: memoisation, list virtualisation and the renders you never needed.",
+    "image": "/images/react-performance.webp",
+    "materials": {
+      "durationHours": 5,
+      "enrolled": 612,
+      "language": "English"
+    },
+    "weeks": [
+      {
+        "id": "react-performance-w1",
+        "title": "Week 1",
+        "description": "Measure before you optimise.",
+        "lessons": [
+          {
+            "id": "react-performance-l1",
+            "title": "Reading the React Profiler",
+            "type": "video",
+            "duration": 16,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "react-performance-l2",
+            "title": "Why This Component Re-Rendered",
+            "type": "video",
+            "duration": 14,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "react-performance-l3",
+            "title": "memo, useMemo, useCallback",
+            "type": "video",
+            "duration": 18,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "react-performance-l4",
+            "title": "Profiler Walkthrough",
+            "type": "pdf",
+            "duration": 5,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "pdfUrl": "/pdfs/lesson.pdf"
+          }
+        ]
+      },
+      {
+        "id": "react-performance-w2",
+        "title": "Week 2",
+        "description": "Fixes that survive a real codebase.",
+        "lessons": [
+          {
+            "id": "react-performance-l5",
+            "title": "Virtualising Long Lists",
+            "type": "video",
+            "duration": 21,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "react-performance-l6",
+            "title": "Code Splitting That Pays Off",
+            "type": "video",
+            "duration": 15,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "react-performance-l7",
+            "title": "Suspense and Streaming",
+            "type": "video",
+            "duration": 19,
+            "questionsCount": 0,
+            "locked": false,
+            "completed": true,
+            "videoUrl": "/videos/lesson.mp4"
+          },
+          {
+            "id": "react-performance-l8",
+            "title": "Performance Exam",
+            "type": "exam",
+            "duration": 15,
+            "questionsCount": 5,
+            "locked": false,
+            "completed": true,
+            "examId": "react-performance-exam1"
+          }
+        ]
+      }
+    ]
+  }
+]
