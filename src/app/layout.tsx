@@ -29,8 +29,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} ${cairo.variable}`}>{children}</body>
+    // The font variables sit on <html> so :root can build --font-sans from them.
+    <html lang="en" className={`${poppins.variable} ${cairo.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
