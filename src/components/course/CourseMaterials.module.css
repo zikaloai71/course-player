@@ -1,0 +1,45 @@
+.card {
+  display: grid;
+  padding: var(--s-2) var(--s-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Two columns from tablet up, as in the design. */
+@media (min-width: 560px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--s-7);
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--s-3);
+  padding-block: var(--s-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  color: var(--navy);
+  font-size: 14.5px;
+}
+
+.value {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+  /* Long instructor names and languages wrap instead of pushing the label out. */
+  overflow-wrap: anywhere;
+}

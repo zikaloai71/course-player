@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { CourseMaterials } from "@/components/course/CourseMaterials";
 import { getCourse, getCourses, getLesson } from "@/lib/data";
 import { nextLesson } from "@/lib/progress";
 import styles from "./page.module.css";
@@ -73,6 +74,7 @@ export default async function CoursePlayerPage({
           <h2 id="materials-heading" className={styles.heading}>
             Course Materials
           </h2>
+          <CourseMaterials course={course} />
         </section>
 
         <aside className={styles.topics} aria-labelledby="topics-heading">
