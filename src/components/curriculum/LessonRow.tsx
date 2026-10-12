@@ -10,9 +10,12 @@ function plural(count: number, word: string) {
 export function LessonRow({
   courseSlug,
   lesson,
+  current = false,
 }: {
   courseSlug: string;
   lesson: Lesson;
+  /** The lesson open in the player right now. */
+  current?: boolean;
 }) {
   const body = (
     <>
@@ -40,15 +43,18 @@ export function LessonRow({
     </>
   );
 
+  const className = `${styles.lesson} ${current ? styles.current : ""}`;
+
   return (
     <li className={styles.row}>
       {lesson.locked ? (
         // A locked lesson is text, not a link: nothing to open yet.
-        <span className={styles.lesson}>{body}</span>
+        <span className={className}>{body}</span>
       ) : (
         <Link
-          className={styles.lesson}
+          className={className}
           href={`/courses/${courseSlug}?lesson=${lesson.id}`}
+          aria-current={current ? "true" : undefined}
         >
           {body}
         </Link>

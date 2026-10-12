@@ -63,7 +63,10 @@ export default async function CoursePlayerPage({
         <section className={styles.player} aria-label="Lesson player">
           <div className={styles.frame}>
             {lesson.videoUrl ? (
+              // Keyed per lesson so switching lessons starts a fresh player
+              // instead of carrying the last one's playhead over.
               <VideoPlayer
+                key={lesson.id}
                 src={lesson.videoUrl}
                 poster="/images/lesson-poster.webp"
                 title={lesson.title}
@@ -103,7 +106,7 @@ export default async function CoursePlayerPage({
               label={`${course.title} progress`}
             />
           </div>
-          <Curriculum course={course} />
+          <Curriculum course={course} currentLessonId={lesson.id} />
         </aside>
 
         <section className={styles.comments} aria-labelledby="comments-heading">

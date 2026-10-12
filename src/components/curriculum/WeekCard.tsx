@@ -5,7 +5,15 @@ import type { Week } from "@/types/course";
 import { LessonRow } from "./LessonRow";
 import styles from "./WeekCard.module.css";
 
-export function WeekCard({ courseSlug, week }: { courseSlug: string; week: Week }) {
+export function WeekCard({
+  courseSlug,
+  week,
+  currentLessonId,
+}: {
+  courseSlug: string;
+  week: Week;
+  currentLessonId: string;
+}) {
   const [open, setOpen] = useState(true);
   const bodyId = `${week.id}-lessons`;
 
@@ -40,7 +48,12 @@ export function WeekCard({ courseSlug, week }: { courseSlug: string; week: Week 
       <div id={bodyId} className={`${styles.body} ${open ? "" : styles.collapsed}`}>
         <ul className={styles.lessons}>
           {week.lessons.map((lesson) => (
-            <LessonRow key={lesson.id} courseSlug={courseSlug} lesson={lesson} />
+            <LessonRow
+              key={lesson.id}
+              courseSlug={courseSlug}
+              lesson={lesson}
+              current={lesson.id === currentLessonId}
+            />
           ))}
         </ul>
       </div>

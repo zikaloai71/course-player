@@ -53,3 +53,24 @@ a.lesson:hover .name {
   background: var(--red-soft);
   color: var(--red);
 }
+
+/* The lesson the player is showing. */
+.current {
+  position: relative;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+.current::before {
+  content: "";
+  position: absolute;
+  inset-block: var(--s-1);
+  inset-inline-start: calc(var(--s-4) * -1);
+  width: 3px;
+  border-radius: var(--r-pill);
+  background: var(--green);
+}
+
+.current .icon {
+  color: var(--green);
+}
