@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CourseMaterials } from "@/components/course/CourseMaterials";
+import { Curriculum } from "@/components/curriculum/Curriculum";
 import { getCourse, getCourses, getLesson } from "@/lib/data";
 import { nextLesson } from "@/lib/progress";
 import styles from "./page.module.css";
@@ -81,6 +82,7 @@ export default async function CoursePlayerPage({
           <h2 id="topics-heading" className={styles.heading}>
             Topics for This Course
           </h2>
+          <Curriculum course={course} />
         </aside>
 
         <section className={styles.comments} aria-labelledby="comments-heading">

@@ -1,0 +1,23 @@
+.card {
+  padding: var(--s-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.desc {
+  margin-top: var(--s-2);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.lessons {
+  margin-top: var(--s-4);
+  border-top: 1px solid var(--line);
+}
