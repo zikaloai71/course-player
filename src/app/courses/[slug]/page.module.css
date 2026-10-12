@@ -79,3 +79,22 @@
   font-size: clamp(20px, 2.4vw, 26px);
   letter-spacing: -0.01em;
 }
+
+/*
+ * Mobile pins the player to the top of the viewport and lets the lesson list
+ * scroll under it, YouTube-style. Sticky needs no JavaScript and no measured
+ * height; the page padding above it is what the player tucks against.
+ */
+@media (max-width: 1023px) {
+  .player {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding-block: var(--s-2) var(--s-3);
+    background: var(--page);
+  }
+
+  .lessonTitle {
+    margin-top: var(--s-3);
+  }
+}
