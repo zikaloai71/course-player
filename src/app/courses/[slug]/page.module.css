@@ -1,0 +1,75 @@
+/*
+ * One grid for the whole player page. Mobile stacks in reading order:
+ * player, section icons, materials, topics, comments. Desktop puts topics in a
+ * second column that spans the rest, as in the design.
+ */
+.layout {
+  display: grid;
+  gap: var(--s-6);
+  padding-block: var(--s-5) var(--s-8);
+  grid-template-areas:
+    "player"
+    "nav"
+    "materials"
+    "topics"
+    "comments";
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    align-items: start;
+    column-gap: var(--s-7);
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+    grid-template-areas:
+      "player topics"
+      "nav topics"
+      "materials topics"
+      "comments topics";
+  }
+}
+
+.player {
+  grid-area: player;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  background: var(--navy);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lessonTitle {
+  margin-top: var(--s-4);
+  font-size: 18px;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.materials {
+  grid-area: materials;
+}
+
+.comments {
+  grid-area: comments;
+}
+
+.topics {
+  grid-area: topics;
+}
+
+/* "Course Materials", "Comments", "Topics for This Course". */
+.heading {
+  margin-bottom: var(--s-4);
+  font-size: clamp(20px, 2.4vw, 26px);
+  letter-spacing: -0.01em;
+}
