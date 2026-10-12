@@ -67,6 +67,12 @@
   grid-area: topics;
 }
 
+/* The bar sits between the heading and the week cards, as in the design. */
+.progress {
+  margin-bottom: var(--s-6);
+  padding-inline: var(--s-2);
+}
+
 /* "Course Materials", "Comments", "Topics for This Course". */
 .heading {
   margin-bottom: var(--s-4);

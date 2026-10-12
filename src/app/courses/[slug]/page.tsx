@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CourseMaterials } from "@/components/course/CourseMaterials";
 import { Curriculum } from "@/components/curriculum/Curriculum";
+import { ProgressBar } from "@/components/ui/ProgressBar";
 import { getCourse, getCourses, getLesson } from "@/lib/data";
-import { nextLesson } from "@/lib/progress";
+import { courseProgress, nextLesson } from "@/lib/progress";
 import styles from "./page.module.css";
 
 type Params = { slug: string };
@@ -82,6 +83,14 @@ export default async function CoursePlayerPage({
           <h2 id="topics-heading" className={styles.heading}>
             Topics for This Course
           </h2>
+          <div className={styles.progress}>
+            <ProgressBar
+              value={courseProgress(course)}
+              animate
+              marker
+              label={`${course.title} progress`}
+            />
+          </div>
           <Curriculum course={course} />
         </aside>
 
