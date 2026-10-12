@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { CourseMaterials } from "@/components/course/CourseMaterials";
+import { Curriculum } from "@/components/curriculum/Curriculum";
 import { getCourse, getCourses, getLesson } from "@/lib/data";
 import { nextLesson } from "@/lib/progress";
+import styles from "./page.module.css";
 
 type Params = { slug: string };
 type Search = { lesson?: string };
@@ -51,8 +55,41 @@ export default async function CoursePlayerPage({
         ]}
         title={course.title}
       />
-      <main className="container" style={{ paddingBlock: "32px 64px" }}>
-        <h2>{lesson.title}</h2>
+
+      <main className={`container ${styles.layout}`}>
+        <section className={styles.player} aria-label="Lesson player">
+          <div className={styles.frame}>
+            <Image
+              src="/images/lesson-poster.webp"
+              alt=""
+              width={1280}
+              height={720}
+              sizes="(max-width: 1023px) 100vw, 65vw"
+              priority
+            />
+          </div>
+          <h2 className={styles.lessonTitle}>{lesson.title}</h2>
+        </section>
+
+        <section className={styles.materials} aria-labelledby="materials-heading">
+          <h2 id="materials-heading" className={styles.heading}>
+            Course Materials
+          </h2>
+          <CourseMaterials course={course} />
+        </section>
+
+        <aside className={styles.topics} aria-labelledby="topics-heading">
+          <h2 id="topics-heading" className={styles.heading}>
+            Topics for This Course
+          </h2>
+          <Curriculum course={course} />
+        </aside>
+
+        <section className={styles.comments} aria-labelledby="comments-heading">
+          <h2 id="comments-heading" className={styles.heading}>
+            Comments
+          </h2>
+        </section>
       </main>
     </>
   );
