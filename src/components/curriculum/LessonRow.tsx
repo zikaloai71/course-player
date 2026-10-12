@@ -27,9 +27,11 @@ export function LessonRow({
         </span>
       ) : (
         <span className={styles.badges}>
-          <span className={`${styles.badge} ${styles.questions}`}>
-            {plural(lesson.questionsCount, "QUESTION")}
-          </span>
+          {lesson.questionsCount > 0 && (
+            <span className={`${styles.badge} ${styles.questions}`}>
+              {plural(lesson.questionsCount, "QUESTION")}
+            </span>
+          )}
           <span className={`${styles.badge} ${styles.minutes}`}>
             {plural(lesson.duration, "MINUTE")}
           </span>
