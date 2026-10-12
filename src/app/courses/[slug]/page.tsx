@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { CourseMaterials } from "@/components/course/CourseMaterials";
 import { Curriculum } from "@/components/curriculum/Curriculum";
 import { ProgressBar } from "@/components/ui/ProgressBar";
+import { VideoPlayer } from "@/components/player/VideoPlayer";
 import { CommentSection } from "@/components/comments/CommentSection";
 import { getComments, getCourse, getCourses, getLesson } from "@/lib/data";
 import { courseProgress, nextLesson } from "@/lib/progress";
@@ -61,14 +62,24 @@ export default async function CoursePlayerPage({
       <main className={`container ${styles.layout}`}>
         <section className={styles.player} aria-label="Lesson player">
           <div className={styles.frame}>
-            <Image
-              src="/images/lesson-poster.webp"
-              alt=""
-              width={1280}
-              height={720}
-              sizes="(max-width: 1023px) 100vw, 65vw"
-              priority
-            />
+            {lesson.videoUrl ? (
+              <VideoPlayer
+                src={lesson.videoUrl}
+                poster="/images/lesson-poster.webp"
+                title={lesson.title}
+              />
+            ) : (
+              // A PDF or exam lesson has nothing to play; the poster holds the
+              // frame until its modal opens (Day 3 task 7, Day 4 task 1).
+              <Image
+                src="/images/lesson-poster.webp"
+                alt=""
+                width={1280}
+                height={720}
+                sizes="(max-width: 1023px) 100vw, 65vw"
+                priority
+              />
+            )}
           </div>
           <h2 className={styles.lessonTitle}>{lesson.title}</h2>
         </section>
