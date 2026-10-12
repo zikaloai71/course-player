@@ -52,6 +52,25 @@ const PATHS = {
       <path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3" />
     </>
   ),
+  play: <path d="M8 5.5l11 6.5-11 6.5z" fill="currentColor" />,
+  pause: (
+    <>
+      <path d="M9 5.5v13M15 5.5v13" strokeWidth="2.5" />
+    </>
+  ),
+  volume: (
+    <>
+      <path d="M4 9.5h3L11.5 6v12L7 14.5H4z" fill="currentColor" />
+      <path d="M15 9.5a3.5 3.5 0 0 1 0 5" />
+      <path d="M17.5 7a7 7 0 0 1 0 10" />
+    </>
+  ),
+  muted: (
+    <>
+      <path d="M4 9.5h3L11.5 6v12L7 14.5H4z" fill="currentColor" />
+      <path d="m15.5 10 5 4M20.5 10l-5 4" />
+    </>
+  ),
 } as const;
 
 export type IconName = keyof typeof PATHS;
