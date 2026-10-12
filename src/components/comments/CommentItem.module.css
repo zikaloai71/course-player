@@ -1,0 +1,31 @@
+.item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--s-4);
+  padding-block: var(--s-5);
+  border-bottom: 1px solid var(--line);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.date {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.text {
+  margin-top: var(--s-3);
+  color: var(--muted);
+  font-size: 14.5px;
+}
