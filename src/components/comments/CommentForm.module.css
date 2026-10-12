@@ -1,0 +1,39 @@
+.form {
+  margin-top: var(--s-5);
+}
+
+.field {
+  width: 100%;
+  min-height: 140px;
+  padding: var(--s-4);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background: var(--card);
+  resize: vertical;
+}
+
+.field::placeholder {
+  color: var(--muted-light);
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  padding: var(--s-3) var(--s-5);
+  border-radius: var(--r-md);
+  background: var(--green);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.submit:hover:enabled {
+  background: var(--green-dark);
+}
+
+.submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

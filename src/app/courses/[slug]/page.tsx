@@ -5,7 +5,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { CourseMaterials } from "@/components/course/CourseMaterials";
 import { Curriculum } from "@/components/curriculum/Curriculum";
 import { ProgressBar } from "@/components/ui/ProgressBar";
-import { getCourse, getCourses, getLesson } from "@/lib/data";
+import { CommentSection } from "@/components/comments/CommentSection";
+import { getComments, getCourse, getCourses, getLesson } from "@/lib/data";
 import { courseProgress, nextLesson } from "@/lib/progress";
 import styles from "./page.module.css";
 
@@ -98,6 +99,7 @@ export default async function CoursePlayerPage({
           <h2 id="comments-heading" className={styles.heading}>
             Comments
           </h2>
+          <CommentSection courseSlug={course.slug} comments={getComments(course.slug)} />
         </section>
       </main>
     </>
