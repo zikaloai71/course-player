@@ -6,6 +6,7 @@ import { CourseMaterials } from "@/components/course/CourseMaterials";
 import { Curriculum } from "@/components/curriculum/Curriculum";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { VideoPlayer } from "@/components/player/VideoPlayer";
+import { SectionNav } from "@/components/player/SectionNav";
 import { CommentSection } from "@/components/comments/CommentSection";
 import { getComments, getCourse, getCourses, getLesson } from "@/lib/data";
 import { courseProgress, nextLesson } from "@/lib/progress";
@@ -86,6 +87,10 @@ export default async function CoursePlayerPage({
           </div>
           <h2 className={styles.lessonTitle}>{lesson.title}</h2>
         </section>
+
+        <div className={styles.nav}>
+          <SectionNav />
+        </div>
 
         <section className={styles.materials} aria-labelledby="materials-heading">
           <h2 id="materials-heading" className={styles.heading}>

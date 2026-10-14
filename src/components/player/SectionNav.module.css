@@ -1,0 +1,32 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 44px;
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  background: var(--card);
+  color: var(--navy);
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.item:hover {
+  border-color: var(--green);
+  color: var(--green-dark);
+}
+
+.item svg {
+  color: var(--green);
+}

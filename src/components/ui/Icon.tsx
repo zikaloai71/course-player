@@ -73,6 +73,25 @@ const PATHS = {
   ),
   expand: <path d="M9 4H4v5M15 4h5v5M15 20h5v-5M9 20H4v-5" />,
   collapse: <path d="M4 9h5V4M20 9h-5V4M20 15h-5v5M4 15h5v5" />,
+  comment: (
+    <>
+      <path d="M20 14.5a2.5 2.5 0 0 1-2.5 2.5H8l-4 3.5v-14A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5z" />
+    </>
+  ),
+  question: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.5 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.8.7-.8 1.3v.6" />
+      <path d="M12 17h.01" />
+    </>
+  ),
+  trophy: (
+    <>
+      <path d="M8 4h8v5a4 4 0 0 1-8 0z" />
+      <path d="M8 5.5H5.5v1A3.5 3.5 0 0 0 8 9.8M16 5.5h2.5v1a3.5 3.5 0 0 1-2.5 3.3" />
+      <path d="M12 13v3.5M9 20h6l-.5-3.5h-5z" />
+    </>
+  ),
   wide: (
     <>
       <rect x="2.5" y="6" width="19" height="12" rx="2" />
