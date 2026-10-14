@@ -75,6 +75,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  /* A pasted URL or a long German noun breaks instead of widening the page. */
+  overflow-wrap: break-word;
 }
 
 img,

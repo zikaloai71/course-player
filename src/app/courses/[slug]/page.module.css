@@ -99,17 +99,13 @@
 }
 
 /*
- * Mobile pins the player to the top of the viewport and lets the lesson list
- * scroll under it, YouTube-style. Sticky needs no JavaScript and no measured
- * height; the page padding above it is what the player tucks against.
+ * A tablet is one column like a phone, but a 3:2 player across 768px would
+ * fill the screen on its own, so the frame stops at two thirds of the height
+ * and the media letterboxes inside it.
  */
 @media (max-width: 1023px) {
-  .player {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    padding-block: var(--s-2) var(--s-3);
-    background: var(--page);
+  .frame {
+    max-height: 66vh;
   }
 
   .lessonTitle {
@@ -117,8 +113,24 @@
   }
 }
 
-/* Desktop has no sticky player to clear. */
-@media (min-width: 1024px) {
+/*
+ * Phones pin the player to the top of the viewport and let the lesson list
+ * scroll under it, YouTube-style. Sticky needs no JavaScript and no measured
+ * height; the page padding above it is what the player tucks against. A
+ * tablet has room to scroll the player away instead.
+ */
+@media (max-width: 639px) {
+  .player {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding-block: var(--s-2) var(--s-3);
+    background: var(--page);
+  }
+}
+
+/* Only a phone has a sticky player to clear. */
+@media (min-width: 640px) {
   .heading {
     scroll-margin-top: var(--s-5);
   }
