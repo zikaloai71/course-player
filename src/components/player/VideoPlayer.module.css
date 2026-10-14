@@ -7,7 +7,9 @@
 .video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* The frame follows the design's 3:2; 16:9 footage sits inside it on the
+     navy, rather than being cropped at the sides. */
+  object-fit: contain;
   cursor: pointer;
 }
 

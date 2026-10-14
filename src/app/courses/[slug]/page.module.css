@@ -18,8 +18,9 @@
 @media (min-width: 1024px) {
   .layout {
     align-items: start;
-    column-gap: var(--s-7);
-    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+    /* The design puts 64px between a 750px player column and a 424px list. */
+    column-gap: var(--s-8);
+    grid-template-columns: minmax(0, 750fr) minmax(0, 424fr);
     grid-template-areas:
       "player topics"
       "nav topics"
@@ -48,7 +49,8 @@
 
 .frame {
   position: relative;
-  aspect-ratio: 16 / 9;
+  /* The design's player is 3:2, not the 16:9 the video file carries. */
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: var(--r-md);
   background: var(--navy);
@@ -57,7 +59,7 @@
 .frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .lessonTitle {
@@ -91,7 +93,7 @@
 .heading {
   margin-bottom: var(--s-4);
   /* Clears the sticky mobile player when a section icon jumps here. */
-  scroll-margin-top: calc(56.25vw + var(--s-8));
+  scroll-margin-top: calc(66.67vw + var(--s-8));
   font-size: clamp(20px, 2.4vw, 26px);
   letter-spacing: -0.01em;
 }

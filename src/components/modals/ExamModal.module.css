@@ -1,0 +1,205 @@
+.exam {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.timer {
+  padding: var(--s-1) var(--s-3);
+  border-radius: var(--r-pill);
+  background: var(--band);
+  color: var(--exam-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The last minute, in the design's exam red. */
+.urgent {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.question {
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.options {
+  display: grid;
+  gap: var(--s-2);
+  border: 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 44px;
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  font-size: 14.5px;
+  cursor: pointer;
+}
+
+.option:hover {
+  border-color: var(--exam-blue-light);
+}
+
+.option:has(:checked) {
+  border-color: var(--exam-blue);
+  background: var(--band);
+  font-weight: 600;
+}
+
+.option input {
+  accent-color: var(--exam-blue);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding-top: var(--s-2);
+}
+
+.step,
+.hand {
+  min-height: 40px;
+  padding: var(--s-2) var(--s-5);
+  border-radius: var(--r-pill);
+  font-weight: 600;
+}
+
+.step {
+  border: 1px solid var(--line-strong);
+  color: var(--navy);
+}
+
+.step:hover:not(:disabled) {
+  border-color: var(--exam-blue);
+  color: var(--exam-blue);
+}
+
+.step:disabled {
+  color: var(--muted-light);
+  cursor: not-allowed;
+}
+
+.hand {
+  background: var(--exam-blue);
+  color: #fff;
+}
+
+.hand:hover:not(:disabled) {
+  background: var(--exam-blue-light);
+}
+
+.hand:disabled {
+  background: var(--track);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.dots {
+  display: flex;
+  gap: var(--s-2);
+}
+
+.dot {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-pill);
+  background: var(--band);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* Answered questions keep the exam yellow; the current one is outlined. */
+.filled {
+  background: var(--exam-yellow);
+  color: var(--ink);
+}
+
+.here {
+  box-shadow: 0 0 0 2px var(--exam-blue);
+  color: var(--exam-blue);
+}
+
+.result {
+  display: grid;
+  gap: var(--s-4);
+  text-align: center;
+  color: var(--navy);
+}
+
+.score {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--exam-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.review {
+  display: grid;
+  gap: var(--s-2);
+  text-align: left;
+}
+
+.review li {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3);
+  border-radius: var(--r-md);
+  font-size: 14px;
+}
+
+.reviewNumber {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.reviewMark {
+  font-weight: 700;
+}
+
+.right {
+  background: var(--green-soft);
+  color: var(--green-dark);
+}
+
+.wrong {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.again {
+  justify-self: center;
+  min-height: 40px;
+  padding: var(--s-2) var(--s-5);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.again:hover {
+  border-color: var(--exam-blue);
+  color: var(--exam-blue);
+}
