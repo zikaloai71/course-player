@@ -9,7 +9,13 @@ import { VideoPlayer } from "@/components/player/VideoPlayer";
 import { SectionNav } from "@/components/player/SectionNav";
 import { PdfLesson } from "@/components/player/PdfLesson";
 import { CommentSection } from "@/components/comments/CommentSection";
-import { getComments, getCourse, getCourses, getLesson } from "@/lib/data";
+import {
+  getComments,
+  getCourse,
+  getCourses,
+  getLeaderboard,
+  getLesson,
+} from "@/lib/data";
 import { courseProgress, nextLesson } from "@/lib/progress";
 import styles from "./page.module.css";
 
@@ -46,6 +52,7 @@ export default async function CoursePlayerPage({
   const course = getCourse(slug);
   if (!course) notFound();
 
+  const progress = courseProgress(course);
   const { lesson: lessonId } = await searchParams;
   // An unknown or missing ?lesson= falls back to where the student stopped.
   const lesson = (lessonId && getLesson(course, lessonId)) || nextLesson(course);
@@ -92,7 +99,12 @@ export default async function CoursePlayerPage({
         </section>
 
         <div className={styles.nav}>
-          <SectionNav courseSlug={course.slug} lessonTitle={lesson.title} />
+          <SectionNav
+            courseSlug={course.slug}
+            lessonTitle={lesson.title}
+            leaderboard={getLeaderboard(course.slug)}
+            progress={progress}
+          />
         </div>
 
         <section className={styles.materials} aria-labelledby="materials-heading">
@@ -108,7 +120,7 @@ export default async function CoursePlayerPage({
           </h2>
           <div className={styles.progress}>
             <ProgressBar
-              value={courseProgress(course)}
+              value={progress}
               animate
               marker
               label={`${course.title} progress`}
