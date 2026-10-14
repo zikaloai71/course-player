@@ -9,12 +9,18 @@ const poppins = Poppins({
   display: "swap",
 });
 
-/** Arabic coach messages in the leaderboard need an Arabic-capable face. */
+/**
+ * Arabic coach messages in the leaderboard need an Arabic-capable face. They
+ * are the only Arabic on the site and they are body text, so one weight is
+ * all that ships.
+ */
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic"],
-  weight: ["400", "600", "700"],
+  weight: ["400"],
   display: "swap",
+  // It lives behind the leaderboard button, so no page should preload it.
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -31,7 +37,12 @@ export default function RootLayout({
   return (
     // The font variables sit on <html> so :root can build --font-sans from them.
     <html lang="en" className={`${poppins.variable} ${cairo.variable}`}>
-      <body>{children}</body>
+      <body>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

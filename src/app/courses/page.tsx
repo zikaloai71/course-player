@@ -18,7 +18,7 @@ export default function CoursesPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Courses" }]}
         title="Courses"
       />
-      <main className={`container ${styles.main}`}>
+      <main id="main" className={`container ${styles.main}`}>
         <p className={styles.intro}>
           {courses.length} courses. Pick up where you stopped, or start something new.
         </p>

@@ -71,7 +71,7 @@ export default async function CoursePlayerPage({
         title={course.title}
       />
 
-      <main className={`container ${styles.layout}`}>
+      <main id="main" className={`container ${styles.layout}`}>
         <section className={styles.player} aria-label="Lesson player">
           <div className={styles.frame}>
             {lesson.videoUrl ? (
