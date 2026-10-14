@@ -1,0 +1,17 @@
+.viewer {
+  width: 100%;
+  height: min(60vh, 520px);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+
+.fallback {
+  padding: var(--s-5);
+  color: var(--muted);
+}
+
+.fallback a {
+  color: var(--green-dark);
+  font-weight: 600;
+  text-decoration: underline;
+}

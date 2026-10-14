@@ -7,6 +7,7 @@ import { Curriculum } from "@/components/curriculum/Curriculum";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { VideoPlayer } from "@/components/player/VideoPlayer";
 import { SectionNav } from "@/components/player/SectionNav";
+import { PdfLesson } from "@/components/player/PdfLesson";
 import { CommentSection } from "@/components/comments/CommentSection";
 import { getComments, getCourse, getCourses, getLesson } from "@/lib/data";
 import { courseProgress, nextLesson } from "@/lib/progress";
@@ -72,9 +73,11 @@ export default async function CoursePlayerPage({
                 poster="/images/lesson-poster.webp"
                 title={lesson.title}
               />
+            ) : lesson.pdfUrl ? (
+              <PdfLesson title={lesson.title} url={lesson.pdfUrl} />
             ) : (
-              // A PDF or exam lesson has nothing to play; the poster holds the
-              // frame until its modal opens (Day 3 task 7, Day 4 task 1).
+              // An exam lesson has nothing to play; the poster holds the frame
+              // until the exam modal arrives.
               <Image
                 src="/images/lesson-poster.webp"
                 alt=""
@@ -89,7 +92,7 @@ export default async function CoursePlayerPage({
         </section>
 
         <div className={styles.nav}>
-          <SectionNav />
+          <SectionNav courseSlug={course.slug} lessonTitle={lesson.title} />
         </div>
 
         <section className={styles.materials} aria-labelledby="materials-heading">

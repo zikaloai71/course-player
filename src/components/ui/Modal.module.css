@@ -1,4 +1,6 @@
 .dialog {
+  /* The global reset zeroes margins, which is what centres a <dialog>. */
+  margin: auto;
   width: min(560px, calc(100vw - var(--s-6)));
   max-height: min(80vh, 720px);
   padding: 0;

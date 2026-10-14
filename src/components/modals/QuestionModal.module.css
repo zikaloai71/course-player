@@ -1,0 +1,62 @@
+.form {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.lesson {
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.field {
+  min-height: 140px;
+  padding: var(--s-3);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  resize: vertical;
+}
+
+.field:focus-visible {
+  border-color: var(--green);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.send {
+  padding: var(--s-3) var(--s-6);
+  border-radius: var(--r-pill);
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+}
+
+.send:hover {
+  background: var(--green-dark);
+}
+
+.send:disabled {
+  background: var(--track);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.sent {
+  display: grid;
+  gap: var(--s-3);
+  text-align: center;
+  color: var(--navy);
+}
+
+.sent strong {
+  font-size: 17px;
+}
