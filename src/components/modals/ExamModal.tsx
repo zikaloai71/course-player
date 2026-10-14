@@ -9,6 +9,14 @@ import styles from "./ExamModal.module.css";
 /** Index of the chosen option, by question id. */
 type Answers = Record<string, number>;
 
+/** What an interrupted exam leaves behind for the next visit. */
+type Saved = {
+  answers: Answers;
+  index: number;
+  left: number;
+  handedIn: boolean;
+};
+
 function score(exam: Exam, answers: Answers): number {
   return exam.questions.filter((q) => answers[q.id] === q.answer).length;
 }
@@ -26,6 +34,41 @@ export function ExamModal({
   const [answers, setAnswers] = useState<Answers>({});
   const [left, setLeft] = useState(exam.timeLimit);
   const [handedIn, setHandedIn] = useState(false);
+  const key = `exam:${exam.id}`;
+
+  // Reading on open rather than on mount keeps the server markup untouched and
+  // picks up a paper left behind in an earlier visit.
+  useEffect(() => {
+    if (!open) return;
+    const raw = localStorage.getItem(key);
+    if (!raw) return;
+    try {
+      const saved = JSON.parse(raw) as Saved;
+      setAnswers(saved.answers);
+      setIndex(saved.index);
+      setLeft(saved.left);
+      setHandedIn(saved.handedIn);
+    } catch {
+      // A broken entry is not worth a crash: start the exam fresh instead.
+      localStorage.removeItem(key);
+    }
+  }, [open, key]);
+
+  // ponytail: one write per answer and per tick. The payload is a few hundred
+  // bytes, so there is nothing to debounce yet.
+  useEffect(() => {
+    if (!open) return;
+    const saved: Saved = { answers, index, left, handedIn };
+    localStorage.setItem(key, JSON.stringify(saved));
+  }, [open, key, answers, index, left, handedIn]);
+
+  function restart() {
+    localStorage.removeItem(key);
+    setAnswers({});
+    setIndex(0);
+    setLeft(exam.timeLimit);
+    setHandedIn(false);
+  }
 
   // One timeout per second rather than an interval, so the countdown cannot run
   // on behind a closed modal and cannot drift past zero.
@@ -55,6 +98,9 @@ export function ExamModal({
               ? "Time is up — this is what you had answered."
               : "Exam handed in."}
           </p>
+          <button type="button" className={styles.again} onClick={restart}>
+            Take it again
+          </button>
           <ol className={styles.review}>
             {exam.questions.map((q, i) => {
               const right = answers[q.id] === q.answer;

@@ -188,3 +188,18 @@
   background: var(--red-soft);
   color: var(--red);
 }
+
+.again {
+  justify-self: center;
+  min-height: 40px;
+  padding: var(--s-2) var(--s-5);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.again:hover {
+  border-color: var(--exam-blue);
+  color: var(--exam-blue);
+}
