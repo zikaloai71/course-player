@@ -26,6 +26,20 @@
       "materials topics"
       "comments topics";
   }
+
+  /*
+   * Wide mode: the player marks itself and the page answers in CSS, so the
+   * grid needs no state of its own. The curriculum drops under the player.
+   */
+  .layout:has([data-wide]) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "player"
+      "nav"
+      "topics"
+      "materials"
+      "comments";
+  }
 }
 
 .player {
@@ -76,6 +90,8 @@
 /* "Course Materials", "Comments", "Topics for This Course". */
 .heading {
   margin-bottom: var(--s-4);
+  /* Clears the sticky mobile player when a section icon jumps here. */
+  scroll-margin-top: calc(56.25vw + var(--s-8));
   font-size: clamp(20px, 2.4vw, 26px);
   letter-spacing: -0.01em;
 }
@@ -96,5 +112,12 @@
 
   .lessonTitle {
     margin-top: var(--s-3);
+  }
+}
+
+/* Desktop has no sticky player to clear. */
+@media (min-width: 1024px) {
+  .heading {
+    scroll-margin-top: var(--s-5);
   }
 }

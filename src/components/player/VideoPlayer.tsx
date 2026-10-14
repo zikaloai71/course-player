@@ -4,6 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import styles from "./VideoPlayer.module.css";
 
+/** Orientation locking is still experimental, so it is missing from lib.dom. */
+type LockableOrientation = ScreenOrientation & {
+  lock?: (orientation: "landscape") => Promise<void>;
+  unlock?: () => void;
+};
+
 type Props = {
   src: string;
   poster: string;
@@ -26,10 +32,23 @@ function clock(seconds: number): string {
  */
 export function VideoPlayer({ src, poster, title }: Props) {
   const video = useRef<HTMLVideoElement>(null);
+  const stage = useRef<HTMLDivElement>(null);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [full, setFull] = useState(false);
+  const [wide, setWide] = useState(false);
+
+  // Fullscreen can also be left with Esc or the browser's own chrome, so the
+  // document is the source of truth, not the button.
+  useEffect(() => {
+    function sync() {
+      setFull(document.fullscreenElement === stage.current);
+    }
+    document.addEventListener("fullscreenchange", sync);
+    return () => document.removeEventListener("fullscreenchange", sync);
+  }, []);
 
   // The metadata often lands before React attaches its listeners, so read the
   // element once on mount instead of waiting for an event that already fired.
@@ -50,8 +69,27 @@ export function VideoPlayer({ src, poster, title }: Props) {
     setTime(to);
   }
 
+  async function toggleFullscreen() {
+    const orientation = screen.orientation as LockableOrientation | undefined;
+    if (document.fullscreenElement) {
+      await document.exitFullscreen();
+      // Give the phone its orientation back when the player closes.
+      orientation?.unlock?.();
+      return;
+    }
+    try {
+      await stage.current?.requestFullscreen();
+      // Phones turn to landscape; desktops and iOS Safari simply refuse, which
+      // is fine — the player is already fullscreen by then.
+      await orientation?.lock?.("landscape");
+    } catch {
+      // Embedded or locked-down browsers refuse one or both; the player keeps
+      // playing inline rather than breaking.
+    }
+  }
+
   return (
-    <div className={styles.stage}>
+    <div ref={stage} className={styles.stage} data-wide={wide || undefined}>
       <video
         ref={video}
         className={styles.video}
@@ -113,6 +151,27 @@ export function VideoPlayer({ src, poster, title }: Props) {
           aria-label={muted ? "Unmute" : "Mute"}
         >
           <Icon name={muted ? "muted" : "volume"} size={18} />
+        </button>
+
+        {/* Wide is a desktop idea only; the CSS hides it on small screens,
+            where the player already fills the width. */}
+        <button
+          type="button"
+          className={`${styles.control} ${styles.wideButton}`}
+          onClick={() => setWide((v) => !v)}
+          aria-pressed={wide}
+          aria-label="Wide mode"
+        >
+          <Icon name="wide" size={18} />
+        </button>
+
+        <button
+          type="button"
+          className={styles.control}
+          onClick={toggleFullscreen}
+          aria-label={full ? "Exit fullscreen" : "Fullscreen"}
+        >
+          <Icon name={full ? "collapse" : "expand"} size={18} />
         </button>
       </div>
     </div>

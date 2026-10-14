@@ -1,0 +1,54 @@
+.coach {
+  margin-bottom: var(--s-5);
+  padding: var(--s-4);
+  border-radius: var(--r-lg);
+  background: var(--green-soft);
+  color: var(--navy);
+  font-family: var(--font-ar);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.board {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 24px 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-md);
+  font-size: 14.5px;
+}
+
+/* The student's own row, as in the design. */
+.you {
+  background: var(--green-soft);
+  box-shadow: inset 0 0 0 1px var(--green);
+  font-weight: 600;
+}
+
+.rank {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.avatar {
+  border-radius: var(--r-pill);
+  object-fit: cover;
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.points {
+  color: var(--green-dark);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}

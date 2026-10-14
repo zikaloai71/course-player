@@ -1,0 +1,53 @@
+.dialog {
+  /* The global reset zeroes margins, which is what centres a <dialog>. */
+  margin: auto;
+  width: min(560px, calc(100vw - var(--s-6)));
+  max-height: min(80vh, 720px);
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-xl);
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.dialog::backdrop {
+  background: rgba(24, 32, 51, 0.55);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  border-bottom: 1px solid var(--line);
+}
+
+.title {
+  font-size: 18px;
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-pill);
+  font-size: 26px;
+  line-height: 1;
+  color: var(--muted);
+}
+
+.close:hover {
+  background: var(--band);
+  color: var(--ink);
+}
+
+.body {
+  /* The head stays put while long content (a PDF, a leaderboard) scrolls. */
+  max-height: calc(min(80vh, 720px) - 69px);
+  overflow: auto;
+  padding: var(--s-5);
+}
