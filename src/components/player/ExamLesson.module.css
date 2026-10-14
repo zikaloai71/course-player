@@ -1,0 +1,23 @@
+/* Sits on the poster, where the play button sits for a video lesson. */
+.start {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  width: 100%;
+  color: #fff;
+  font-weight: 600;
+}
+
+.start svg {
+  color: var(--exam-yellow);
+}
+
+.meta {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  font-weight: 400;
+}

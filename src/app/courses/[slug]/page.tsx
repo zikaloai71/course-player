@@ -8,11 +8,13 @@ import { ProgressBar } from "@/components/ui/ProgressBar";
 import { VideoPlayer } from "@/components/player/VideoPlayer";
 import { SectionNav } from "@/components/player/SectionNav";
 import { PdfLesson } from "@/components/player/PdfLesson";
+import { ExamLesson } from "@/components/player/ExamLesson";
 import { CommentSection } from "@/components/comments/CommentSection";
 import {
   getComments,
   getCourse,
   getCourses,
+  getExam,
   getLeaderboard,
   getLesson,
 } from "@/lib/data";
@@ -56,6 +58,7 @@ export default async function CoursePlayerPage({
   const { lesson: lessonId } = await searchParams;
   // An unknown or missing ?lesson= falls back to where the student stopped.
   const lesson = (lessonId && getLesson(course, lessonId)) || nextLesson(course);
+  const exam = lesson.examId ? getExam(lesson.examId) : undefined;
 
   return (
     <>
@@ -82,9 +85,10 @@ export default async function CoursePlayerPage({
               />
             ) : lesson.pdfUrl ? (
               <PdfLesson title={lesson.title} url={lesson.pdfUrl} />
+            ) : exam ? (
+              <ExamLesson exam={exam} />
             ) : (
-              // An exam lesson has nothing to play; the poster holds the frame
-              // until the exam modal arrives.
+              // Nothing to play and nothing to open: the poster holds the frame.
               <Image
                 src="/images/lesson-poster.webp"
                 alt=""

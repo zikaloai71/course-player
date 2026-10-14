@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
+import { clock } from "@/lib/time";
 import styles from "./VideoPlayer.module.css";
 
 /** Orientation locking is still experimental, so it is missing from lib.dom. */
@@ -16,13 +17,6 @@ type Props = {
   /** Lesson title, used for the labels of the controls. */
   title: string;
 };
-
-/** "754" -> "12:34". Hours are longer than any lesson here, so mm:ss is enough. */
-function clock(seconds: number): string {
-  const whole = Math.max(0, Math.floor(seconds));
-  const mins = Math.floor(whole / 60);
-  return `${mins}:${String(whole % 60).padStart(2, "0")}`;
-}
 
 /**
  * Native <video> with our own control bar, as the design shows: the browser
