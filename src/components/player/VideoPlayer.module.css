@@ -60,6 +60,26 @@
   color: var(--green);
 }
 
+/* Below the desktop breakpoint the player is already full width. */
+.wideButton {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .wideButton {
+    display: flex;
+  }
+}
+
+/* Fullscreen replaces the 16/9 frame with the whole screen. */
+.stage:fullscreen {
+  background: #000;
+}
+
+.stage:fullscreen .video {
+  object-fit: contain;
+}
+
 .time {
   font-size: 12px;
   font-variant-numeric: tabular-nums;

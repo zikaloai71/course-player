@@ -26,6 +26,20 @@
       "materials topics"
       "comments topics";
   }
+
+  /*
+   * Wide mode: the player marks itself and the page answers in CSS, so the
+   * grid needs no state of its own. The curriculum drops under the player.
+   */
+  .layout:has([data-wide]) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "player"
+      "nav"
+      "topics"
+      "materials"
+      "comments";
+  }
 }
 
 .player {
