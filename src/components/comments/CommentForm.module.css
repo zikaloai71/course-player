@@ -13,7 +13,7 @@
 }
 
 .field::placeholder {
-  color: var(--muted-light);
+  color: var(--muted);
 }
 
 .submit {

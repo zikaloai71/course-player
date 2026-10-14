@@ -1,15 +1,17 @@
 :root {
   /* Colors — sampled from the Figma design */
   --green: #41b69d;
-  --green-dark: #359a84;
+  /* Darkened from the design's #359a84 so text on white clears AA (4.8:1). */
+  --green-dark: #2b7f6b;
   --green-soft: #f2faf8;
-  --red: #e5556f;
-  /* File and lock icons in the curriculum. */
-  --gold: #d2a53c;
+  /* Only ever used as text on --red-soft, so it carries the darker AA value. */
+  --red: #cf2f4d;
+  /* File and lock icons in the curriculum, dark enough for the 3:1 icon rule. */
+  --gold: #b98c22;
   --red-soft: #fdf2f4;
   --navy: #293652;
   --ink: #181818;
-  --muted: #8a8f98;
+  --muted: #6b7280;
   --muted-light: #a9aeb6;
   --band: #f5f9fa;
   --line: #efefef;
@@ -130,6 +132,24 @@ h4 {
   max-width: var(--container);
   margin-inline: auto;
   padding-inline: var(--s-4);
+}
+
+/* Keyboard users land on this before the breadcrumb. */
+.skip-link {
+  position: absolute;
+  top: var(--s-2);
+  left: var(--s-2);
+  z-index: 20;
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-md);
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
 }
 
 .visually-hidden {

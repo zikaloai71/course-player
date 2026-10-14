@@ -31,7 +31,12 @@ export default function RootLayout({
   return (
     // The font variables sit on <html> so :root can build --font-sans from them.
     <html lang="en" className={`${poppins.variable} ${cairo.variable}`}>
-      <body>{children}</body>
+      <body>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }
