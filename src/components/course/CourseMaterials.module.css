@@ -1,10 +1,10 @@
 .card {
   display: grid;
   padding: var(--s-2) var(--s-5);
-  border: 1px solid var(--line);
   border-radius: var(--r-lg);
   background: var(--card);
-  box-shadow: var(--shadow-sm);
+  /* The design lifts this card on a soft shadow rather than outlining it. */
+  box-shadow: var(--shadow-md);
 }
 
 /* Two columns from tablet up, as in the design. */
@@ -21,7 +21,7 @@
   align-items: center;
   gap: var(--s-3);
   padding-block: var(--s-4);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .row:last-child {
