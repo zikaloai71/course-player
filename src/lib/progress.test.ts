@@ -30,11 +30,7 @@ function course(lessons: Lesson[]): Course {
 }
 
 test("progress is the share of finished lessons, rounded", () => {
-  const c = course([
-    lesson("a", { completed: true }),
-    lesson("b"),
-    lesson("c"),
-  ]);
+  const c = course([lesson("a", { completed: true }), lesson("b"), lesson("c")]);
   assert.equal(courseProgress(c), 33);
 });
 
