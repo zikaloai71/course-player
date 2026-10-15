@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import { Icon } from "@/components/ui/Icon";
-import styles from "./PdfLesson.module.css";
+import { LessonPoster } from "./LessonPoster";
 
 const PdfModal = dynamic(() =>
   import("@/components/modals/PdfModal").then((m) => m.PdfModal),
@@ -16,19 +14,9 @@ export function PdfLesson({ title, url }: { title: string; url: string }) {
 
   return (
     <>
-      <Image
-        src="/images/lesson-poster.webp"
-        alt=""
-        width={854}
-        height={569}
-        sizes="(max-width: 1023px) 100vw, 65vw"
-        priority
+      <LessonPoster
+        action={{ icon: "file", label: "Open the PDF", onClick: () => setOpen(true) }}
       />
-      <button type="button" className={styles.open} onClick={() => setOpen(true)}>
-        <Icon name="file" size={18} />
-        Open the PDF
-      </button>
-
       <PdfModal open={open} onClose={() => setOpen(false)} title={title} url={url} />
     </>
   );

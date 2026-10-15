@@ -1,5 +1,5 @@
 /* Sits on the poster, where the play button sits for a video lesson. */
-.start {
+.action {
   position: absolute;
   inset: 0;
   display: flex;
@@ -12,8 +12,8 @@
   font-weight: 600;
 }
 
-.start svg {
-  color: var(--exam-yellow);
+.action svg {
+  color: var(--green);
 }
 
 .meta {

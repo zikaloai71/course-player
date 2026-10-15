@@ -1,11 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import { Icon } from "@/components/ui/Icon";
 import type { Exam } from "@/types/course";
-import styles from "./ExamLesson.module.css";
+import { LessonPoster } from "./LessonPoster";
 
 const ExamModal = dynamic(() =>
   import("@/components/modals/ExamModal").then((m) => m.ExamModal),
@@ -17,22 +15,14 @@ export function ExamLesson({ exam }: { exam: Exam }) {
 
   return (
     <>
-      <Image
-        src="/images/lesson-poster.webp"
-        alt=""
-        width={854}
-        height={569}
-        sizes="(max-width: 1023px) 100vw, 65vw"
-        priority
+      <LessonPoster
+        action={{
+          icon: "trophy",
+          label: "Start the exam",
+          meta: `${exam.questions.length} questions · ${Math.round(exam.timeLimit / 60)} min`,
+          onClick: () => setOpen(true),
+        }}
       />
-      <button type="button" className={styles.start} onClick={() => setOpen(true)}>
-        <Icon name="trophy" size={28} />
-        Start the exam
-        <span className={styles.meta}>
-          {exam.questions.length} questions · {Math.round(exam.timeLimit / 60)} min
-        </span>
-      </button>
-
       <ExamModal open={open} onClose={() => setOpen(false)} exam={exam} />
     </>
   );

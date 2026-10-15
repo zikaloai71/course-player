@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CourseMaterials } from "@/components/course/CourseMaterials";
@@ -9,6 +8,7 @@ import { VideoPlayer } from "@/components/player/VideoPlayer";
 import { SectionNav } from "@/components/player/SectionNav";
 import { PdfLesson } from "@/components/player/PdfLesson";
 import { ExamLesson } from "@/components/player/ExamLesson";
+import { LessonPoster } from "@/components/player/LessonPoster";
 import { CommentSection } from "@/components/comments/CommentSection";
 import {
   getComments,
@@ -94,14 +94,7 @@ export default async function CoursePlayerPage({
               <ExamLesson exam={exam} />
             ) : (
               // Nothing to play and nothing to open: the poster holds the frame.
-              <Image
-                src="/images/lesson-poster.webp"
-                alt=""
-                width={854}
-                height={569}
-                sizes="(max-width: 1023px) 100vw, 65vw"
-                priority
-              />
+              <LessonPoster />
             )}
           </div>
           <h2 className={styles.lessonTitle}>{lesson.title}</h2>
