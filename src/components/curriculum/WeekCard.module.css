@@ -1,23 +1,21 @@
+/* A thin, square-cornered frame with no shadow, at every width. */
 .card {
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
+  border: 1px solid var(--line-strong);
   background: var(--card);
-  box-shadow: var(--shadow-sm);
 }
 
-.desktopHeader {
-  display: none;
+.header {
+  padding: var(--s-4) var(--s-5);
 }
 
-/* The whole header is the tap target while the card can collapse. */
 .toggle {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   gap: var(--s-4);
+  /* Keeps the title row a 44px touch target. */
   min-height: 44px;
-  padding: var(--s-4) var(--s-5);
   text-align: left;
 }
 
@@ -36,36 +34,11 @@
 }
 
 .desc {
-  margin-top: var(--s-2);
+  margin-top: var(--s-1);
   color: var(--muted);
   font-size: 14px;
 }
 
 .lessons {
-  padding-inline: var(--s-5);
-  border-top: 1px solid var(--line);
-}
-
-.body {
-  padding-bottom: var(--s-2);
-}
-
-.collapsed {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .mobileHeader {
-    display: none;
-  }
-
-  .desktopHeader {
-    display: block;
-    padding: var(--s-5) var(--s-5) var(--s-4);
-  }
-
-  /* Desktop shows every week in full, whatever was collapsed on mobile. */
-  .collapsed {
-    display: block;
-  }
+  border-top: 1px solid var(--line-strong);
 }

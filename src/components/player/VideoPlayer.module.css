@@ -13,28 +13,37 @@
   cursor: pointer;
 }
 
-/* Centre play button: solid on the poster, fading to a hint once running. */
+/*
+ * Centre play button, as the design draws it: a white disc with a red play
+ * mark over a grey veil that dims the frame while the lesson is paused or not
+ * yet started. Once it plays, the veil lifts and the disc only shows on hover.
+ */
 .big {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
   width: 100%;
-  color: #fff;
-  /* The icon sits in its own disc so it reads on any frame. */
+  color: var(--red);
+  background: rgba(24, 24, 24, 0.45);
+  transition: background 0.2s ease;
+}
+
+.stage[data-playing] .big {
   background: none;
 }
 
 .big svg {
-  padding: 18px;
+  padding: 22px;
   border-radius: var(--r-pill);
-  background: rgba(41, 54, 82, 0.72);
+  background: #fff;
   box-sizing: content-box;
-  transition: background 0.2s ease;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease;
 }
 
 .big:hover svg {
-  background: var(--green);
+  transform: scale(1.06);
 }
 
 .stage:not(:hover) .big[aria-label^="Pause"] svg {
