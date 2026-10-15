@@ -54,7 +54,8 @@ export default function Loading() {
               <div key={w} className={`${week.card} ${loading.week}`}>
                 <Skeleton width={110} height={19} />
                 <Skeleton width="85%" height={13} />
-                {Array.from({ length: 5 }, (_, l) => (
+                {/* Only the student's week opens, so only the first has rows. */}
+                {Array.from({ length: w === 0 ? 5 : 0 }, (_, l) => (
                   <div key={l} className={loading.lesson}>
                     <Skeleton width={17} height={17} />
                     <Skeleton height={14} />

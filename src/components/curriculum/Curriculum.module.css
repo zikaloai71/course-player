@@ -1,9 +1,4 @@
 .weeks {
   display: grid;
-}
-
-@media (min-width: 1024px) {
-  .weeks {
-    gap: var(--s-5);
-  }
+  gap: var(--s-5);
 }

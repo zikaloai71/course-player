@@ -1,30 +1,21 @@
-/*
- * Mobile shows the weeks as flat bands split by full-width rules, with no box
- * around them; desktop puts each in a thin, square-cornered frame. Neither
- * has a shadow.
- */
+/* A thin, square-cornered frame with no shadow, at every width. */
 .card {
-  border-top: 1px solid var(--line-strong);
+  border: 1px solid var(--line-strong);
   background: var(--card);
 }
 
-.card:last-child {
-  border-bottom: 1px solid var(--line-strong);
+.header {
+  padding: var(--s-4) var(--s-5);
 }
 
-.desktopHeader {
-  display: none;
-}
-
-/* The whole header is the tap target while the card can collapse. */
 .toggle {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   gap: var(--s-4);
+  /* Keeps the title row a 44px touch target. */
   min-height: 44px;
-  padding: var(--s-4) var(--s-5);
   text-align: left;
 }
 
@@ -43,36 +34,11 @@
 }
 
 .desc {
-  margin-top: var(--s-2);
+  margin-top: var(--s-1);
   color: var(--muted);
   font-size: 14px;
 }
 
 .lessons {
   border-top: 1px solid var(--line-strong);
-}
-
-.collapsed {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .mobileHeader {
-    display: none;
-  }
-
-  .card,
-  .card:last-child {
-    border: 1px solid var(--line-strong);
-  }
-
-  .desktopHeader {
-    display: block;
-    padding: var(--s-5) var(--s-5) var(--s-4);
-  }
-
-  /* Desktop shows every week in full, whatever was collapsed on mobile. */
-  .collapsed {
-    display: block;
-  }
 }
