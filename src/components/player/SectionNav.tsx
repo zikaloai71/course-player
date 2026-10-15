@@ -17,8 +17,11 @@ const LeaderboardModal = dynamic(() =>
 );
 
 /**
- * The icon row under the player. Jumps are plain anchors, so the browser does
- * the smooth scrolling (and skips it for anyone who asked for less motion).
+ * The icon row under the player, in the place the design keeps its social
+ * icons. Jumps are plain anchors, so the browser does the smooth scrolling
+ * (and skips it for anyone who asked for less motion); the two modals open
+ * from buttons. Each icon carries its name for screen readers and as the
+ * native tooltip.
  */
 export function SectionNav({
   courseSlug,
@@ -39,27 +42,37 @@ export function SectionNav({
     <nav className={styles.nav} aria-label="Jump to a section">
       <ul className={styles.items}>
         <li>
-          <a className={styles.item} href="#topics-heading">
+          <a className={styles.item} href="#topics-heading" title="Curriculum">
             <Icon name="lessons" size={18} />
-            Curriculum
+            <span className="visually-hidden">Curriculum</span>
           </a>
         </li>
         <li>
-          <a className={styles.item} href="#comments-heading">
+          <a className={styles.item} href="#comments-heading" title="Comments">
             <Icon name="comment" size={18} />
-            Comments
+            <span className="visually-hidden">Comments</span>
           </a>
         </li>
         <li>
-          <button type="button" className={styles.item} onClick={() => setAsking(true)}>
+          <button
+            type="button"
+            className={styles.item}
+            onClick={() => setAsking(true)}
+            title="Ask a Question"
+          >
             <Icon name="question" size={18} />
-            Ask a Question
+            <span className="visually-hidden">Ask a Question</span>
           </button>
         </li>
         <li>
-          <button type="button" className={styles.item} onClick={() => setRanking(true)}>
+          <button
+            type="button"
+            className={styles.item}
+            onClick={() => setRanking(true)}
+            title="Leaderboard"
+          >
             <Icon name="trophy" size={18} />
-            Leaderboard
+            <span className="visually-hidden">Leaderboard</span>
           </button>
         </li>
       </ul>
