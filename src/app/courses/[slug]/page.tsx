@@ -25,8 +25,9 @@ type Params = { slug: string };
 type Search = { lesson?: string };
 
 /** Every course page is built at build time; the lesson lives in the query. */
-export function generateStaticParams(): Params[] {
-  return getCourses().map((course) => ({ slug: course.slug }));
+export async function generateStaticParams(): Promise<Params[]> {
+  const courses = await getCourses();
+  return courses.map((course) => ({ slug: course.slug }));
 }
 
 export async function generateMetadata({
@@ -35,7 +36,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const course = getCourse(slug);
+  const course = await getCourse(slug);
   if (!course) return { title: "Course not found" };
   return {
     title: course.title,
@@ -51,14 +52,18 @@ export default async function CoursePlayerPage({
   searchParams: Promise<Search>;
 }) {
   const { slug } = await params;
-  const course = getCourse(slug);
+  const course = await getCourse(slug);
   if (!course) notFound();
 
   const progress = courseProgress(course);
+  const [leaderboard, comments] = await Promise.all([
+    getLeaderboard(course.slug),
+    getComments(course.slug),
+  ]);
   const { lesson: lessonId } = await searchParams;
   // An unknown or missing ?lesson= falls back to where the student stopped.
   const lesson = (lessonId && getLesson(course, lessonId)) || nextLesson(course);
-  const exam = lesson.examId ? getExam(lesson.examId) : undefined;
+  const exam = lesson.examId ? await getExam(lesson.examId) : undefined;
 
   return (
     <>
@@ -106,7 +111,7 @@ export default async function CoursePlayerPage({
           <SectionNav
             courseSlug={course.slug}
             lessonTitle={lesson.title}
-            leaderboard={getLeaderboard(course.slug)}
+            leaderboard={leaderboard}
             progress={progress}
           />
         </div>
@@ -137,7 +142,7 @@ export default async function CoursePlayerPage({
           <h2 id="comments-heading" className={styles.heading}>
             Comments
           </h2>
-          <CommentSection courseSlug={course.slug} comments={getComments(course.slug)} />
+          <CommentSection courseSlug={course.slug} comments={comments} />
         </section>
       </main>
     </>
