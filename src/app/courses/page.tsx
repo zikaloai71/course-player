@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Browse the ITLegend catalogue and pick up where you left off.",
 };
 
-export default function CoursesPage() {
-  const courses = getCourses();
+export default async function CoursesPage() {
+  const courses = await getCourses();
 
   return (
     <>

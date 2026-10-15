@@ -3,11 +3,9 @@
 import { useEffect, useState } from "react";
 import { Modal } from "@/components/ui/Modal";
 import { clock } from "@/lib/time";
+import { isCorrect, score, type Answers } from "@/lib/exam";
 import type { Exam } from "@/types/course";
 import styles from "./ExamModal.module.css";
-
-/** Index of the chosen option, by question id. */
-type Answers = Record<string, number>;
 
 /** What an interrupted exam leaves behind for the next visit. */
 type Saved = {
@@ -16,10 +14,6 @@ type Saved = {
   left: number;
   handedIn: boolean;
 };
-
-function score(exam: Exam, answers: Answers): number {
-  return exam.questions.filter((q) => answers[q.id] === q.answer).length;
-}
 
 export function ExamModal({
   open,
@@ -103,7 +97,7 @@ export function ExamModal({
           </button>
           <ol className={styles.review}>
             {exam.questions.map((q, i) => {
-              const right = answers[q.id] === q.answer;
+              const right = isCorrect(exam, answers, q.id);
               return (
                 <li key={q.id} className={right ? styles.right : styles.wrong}>
                   <span className={styles.reviewNumber}>{i + 1}</span>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CourseMaterials } from "@/components/course/CourseMaterials";
@@ -9,6 +8,7 @@ import { VideoPlayer } from "@/components/player/VideoPlayer";
 import { SectionNav } from "@/components/player/SectionNav";
 import { PdfLesson } from "@/components/player/PdfLesson";
 import { ExamLesson } from "@/components/player/ExamLesson";
+import { LessonPoster } from "@/components/player/LessonPoster";
 import { CommentSection } from "@/components/comments/CommentSection";
 import {
   getComments,
@@ -25,8 +25,9 @@ type Params = { slug: string };
 type Search = { lesson?: string };
 
 /** Every course page is built at build time; the lesson lives in the query. */
-export function generateStaticParams(): Params[] {
-  return getCourses().map((course) => ({ slug: course.slug }));
+export async function generateStaticParams(): Promise<Params[]> {
+  const courses = await getCourses();
+  return courses.map((course) => ({ slug: course.slug }));
 }
 
 export async function generateMetadata({
@@ -35,7 +36,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const course = getCourse(slug);
+  const course = await getCourse(slug);
   if (!course) return { title: "Course not found" };
   return {
     title: course.title,
@@ -51,14 +52,21 @@ export default async function CoursePlayerPage({
   searchParams: Promise<Search>;
 }) {
   const { slug } = await params;
-  const course = getCourse(slug);
+  const course = await getCourse(slug);
   if (!course) notFound();
 
   const progress = courseProgress(course);
+  const [leaderboard, comments] = await Promise.all([
+    getLeaderboard(course.slug),
+    getComments(course.slug),
+  ]);
   const { lesson: lessonId } = await searchParams;
-  // An unknown or missing ?lesson= falls back to where the student stopped.
-  const lesson = (lessonId && getLesson(course, lessonId)) || nextLesson(course);
-  const exam = lesson.examId ? getExam(lesson.examId) : undefined;
+  // An unknown, missing or still-locked ?lesson= falls back to where the
+  // student stopped: the curriculum not linking a locked lesson is not enough
+  // on its own, since anyone can edit the id in the address bar.
+  const requested = lessonId ? getLesson(course, lessonId) : undefined;
+  const lesson = requested && !requested.locked ? requested : nextLesson(course);
+  const exam = lesson.examId ? await getExam(lesson.examId) : undefined;
 
   return (
     <>
@@ -89,14 +97,7 @@ export default async function CoursePlayerPage({
               <ExamLesson exam={exam} />
             ) : (
               // Nothing to play and nothing to open: the poster holds the frame.
-              <Image
-                src="/images/lesson-poster.webp"
-                alt=""
-                width={854}
-                height={569}
-                sizes="(max-width: 1023px) 100vw, 65vw"
-                priority
-              />
+              <LessonPoster />
             )}
           </div>
           <h2 className={styles.lessonTitle}>{lesson.title}</h2>
@@ -106,7 +107,7 @@ export default async function CoursePlayerPage({
           <SectionNav
             courseSlug={course.slug}
             lessonTitle={lesson.title}
-            leaderboard={getLeaderboard(course.slug)}
+            leaderboard={leaderboard}
             progress={progress}
           />
         </div>
@@ -137,7 +138,7 @@ export default async function CoursePlayerPage({
           <h2 id="comments-heading" className={styles.heading}>
             Comments
           </h2>
-          <CommentSection courseSlug={course.slug} comments={getComments(course.slug)} />
+          <CommentSection courseSlug={course.slug} comments={comments} />
         </section>
       </main>
     </>

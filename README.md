@@ -53,7 +53,8 @@ npm run build && npm start
 src/app         routes: /courses and /courses/[slug]
 src/components  ui/ (shared), player/, curriculum/, comments/, modals/, courses/
 src/data        the JSON the app reads, plus the coach messages
-src/lib         data access (data.ts), progress maths (progress.ts), time (time.ts)
+src/lib         data access (data.ts), progress (progress.ts), exam scoring
+                (exam.ts), time (time.ts), each with its tests beside it
 src/types       the shapes everything else imports
 src/hooks       useInView, for the progress bar
 ```
@@ -76,7 +77,11 @@ headers cost nothing on the client.
 
 All reads go through `src/lib/data.ts`, which hands back typed objects from the
 JSON in `src/data`. Components never import the JSON directly, so swapping the
-files for a real API is a change in one file.
+files for a real API is a change in one file. Those reads are already `async`
+even though the JSON sits in memory: that is the shape a `fetch` has, so the
+pages that `await` them today will not change when a server answers instead.
+Lookups inside a course the caller already holds — `getLesson`, the progress
+helpers — stay synchronous, because they will never become requests.
 
 Progress is derived, not stored: `src/lib/progress.ts` turns the lessons into a
 percentage, a status and "the lesson you stopped at". The exam is the one piece
@@ -97,6 +102,44 @@ only Arabic on the site sits behind the leaderboard button.
 
 The player, the modals, the accordion and the exam are built on the platform — `<video>`, `<dialog>`, CSS grid and `:has()` — so the
 app ships React, Next and nothing else.
+
+### How this grows
+
+The structure is grouped by the part of the page a component builds, not by
+what kind of file it is, so a feature arrives in one folder rather than
+scattered across `components/`, `hooks/` and `utils/`. What the next features
+would actually touch:
+
+- **A real API** — `src/lib/data.ts` only. The signatures are already async, so
+  the pages do not move; caching becomes a `fetch` option or `unstable_cache`
+  in that file.
+- **Auth and per-student progress** — middleware for the session, then progress
+  stops being derived from the seed data: `src/lib/progress.ts` keeps the
+  maths, and reads take the student's completed set, which it already accepts
+  as an argument. Writes become server actions next to the data layer.
+- **More lesson kinds** — the player page picks a frame per lesson type in one
+  place; a new kind is a component and a branch, not a change to the
+  curriculum, the materials or the comments.
+- **More modals** — `Modal` takes them as children, and each is loaded with
+  `next/dynamic`, so the page bundle does not grow with the feature list.
+- **Arabic UI** — spacing already uses logical properties and the Arabic face is
+  loaded for the coach messages, so an RTL locale is a `dir` switch and a
+  routing decision rather than a stylesheet rewrite.
+
+I deliberately did not add service, repository or store layers: each would have
+exactly one implementation at this size, and `data.ts` already gives the one
+seam that a backend needs.
+
+## Tests
+
+```bash
+npm test
+```
+
+`node --test` with `tsx`, no framework. The suites cover the logic that breaks
+quietly: course progress and its rounding, the status boundaries, which lesson
+comes next, when a locked lesson opens, exam scoring with unanswered questions,
+and the mm:ss clock. Rendering is checked by hand in the browser instead.
 
 ## Accessibility
 
@@ -123,6 +166,5 @@ been run against the deployed site yet.
 ## With more time
 
 - A real API and auth behind `src/lib/data.ts`, instead of JSON.
-- Tests: the progress maths and the exam scoring are the parts worth covering.
 - Marking a lesson complete when its video ends, and syncing that progress.
 - Captions for the lesson video.
