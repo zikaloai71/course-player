@@ -1,0 +1,47 @@
+/* Only what the page's own classes do not already lay out. */
+
+/* The play button's place on the navy frame, faint so it reads as "video". */
+.poster {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  opacity: 0.25;
+}
+
+.row {
+  display: flex;
+  gap: var(--s-3);
+}
+
+.stack {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.week {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-5);
+}
+
+.lesson {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--s-3);
+  padding-block: var(--s-2);
+}
+
+.comment {
+  display: flex;
+  gap: var(--s-4);
+  padding-block: var(--s-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.lines {
+  display: grid;
+  flex: 1;
+  gap: var(--s-2);
+}
