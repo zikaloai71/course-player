@@ -16,12 +16,12 @@ const PATHS = {
       <path d="m15.5 5 3.5.9-3.1 14.6-3.5-.9z" />
     </>
   ),
+  // A student reading an open book, as in the design's Enrolled row.
   enrolled: (
     <>
-      <circle cx="9" cy="8" r="3.2" />
-      <path d="M3.5 20a5.5 5.5 0 0 1 11 0" />
-      <path d="M16 11a3 3 0 0 0 0-6" />
-      <path d="M17 20h3.5a4.5 4.5 0 0 0-3-4.2" />
+      <circle cx="12" cy="5.5" r="3" />
+      <path d="M12 12.5c-2-1.4-4.6-1.8-7-1.3v8.3c2.4-.5 5 0 7 1.4 2-1.4 4.6-1.9 7-1.4v-8.3c-2.4-.5-5-.1-7 1.3z" />
+      <path d="M12 12.5v8.4" />
     </>
   ),
   globe: (
@@ -31,12 +31,13 @@ const PATHS = {
       <path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z" />
     </>
   ),
+  // A person behind a laptop, as in the design's Instructor row.
   instructor: (
     <>
-      <circle cx="12" cy="6.5" r="3" />
-      <path d="M7 13.5a5 5 0 0 1 10 0" />
-      <path d="M4 17.5h16" />
-      <path d="M6.5 21 8 17.5M17.5 21 16 17.5" />
+      <circle cx="12" cy="6" r="3" />
+      <path d="M7 14a5 5 0 0 1 10 0" />
+      <rect x="5" y="14" width="14" height="5.5" rx="1" />
+      <path d="M3 20.5h18M12 16.75h.01" />
     </>
   ),
   file: (
@@ -46,10 +47,13 @@ const PATHS = {
       <path d="M9 13h6M9 16.5h4" />
     </>
   ),
+  // A rounded padlock with a keyhole, the design's locked-lesson mark.
   lock: (
     <>
-      <rect x="5" y="10.5" width="14" height="10" rx="2" />
       <path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3" />
+      <rect x="6" y="10.5" width="12" height="10" rx="3" />
+      <circle cx="12" cy="14.6" r="1.3" />
+      <path d="M12 15.9v1.9" />
     </>
   ),
   play: <path d="M8 5.5l11 6.5-11 6.5z" fill="currentColor" />,

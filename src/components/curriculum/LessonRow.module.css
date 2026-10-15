@@ -1,5 +1,6 @@
 .row {
-  border-bottom: 1px solid var(--line);
+  /* The rule runs the full width of the week, edge to edge, as in the design. */
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .row:last-child {
@@ -14,14 +15,14 @@
   gap: var(--s-3);
   /* Keeps the whole row a 44px touch target on mobile. */
   min-height: 44px;
-  padding-block: var(--s-3);
+  padding: var(--s-3) var(--s-5);
   color: var(--navy);
   font-size: 14.5px;
 }
 
 .icon {
   display: flex;
-  color: var(--gold);
+  color: var(--icon);
 }
 
 a.lesson:hover .name {
@@ -65,7 +66,7 @@ a.lesson:hover .name {
   content: "";
   position: absolute;
   inset-block: var(--s-1);
-  inset-inline-start: calc(var(--s-4) * -1);
+  inset-inline-start: 0;
   width: 3px;
   border-radius: var(--r-pill);
   background: var(--green);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Week } from "@/types/course";
 import { LessonRow } from "./LessonRow";
 import styles from "./WeekCard.module.css";
@@ -14,7 +14,14 @@ export function WeekCard({
   week: Week;
   currentLessonId: string;
 }) {
-  const [open, setOpen] = useState(true);
+  // On mobile only the week the student is in starts open, as in the design;
+  // picking a lesson in another week opens that one too. Desktop shows every
+  // week regardless (see the CSS).
+  const hasCurrent = week.lessons.some((l) => l.id === currentLessonId);
+  const [open, setOpen] = useState(hasCurrent);
+  useEffect(() => {
+    if (hasCurrent) setOpen(true);
+  }, [hasCurrent]);
   const bodyId = `${week.id}-lessons`;
 
   return (
