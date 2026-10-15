@@ -61,8 +61,11 @@ export default async function CoursePlayerPage({
     getComments(course.slug),
   ]);
   const { lesson: lessonId } = await searchParams;
-  // An unknown or missing ?lesson= falls back to where the student stopped.
-  const lesson = (lessonId && getLesson(course, lessonId)) || nextLesson(course);
+  // An unknown, missing or still-locked ?lesson= falls back to where the
+  // student stopped: the curriculum not linking a locked lesson is not enough
+  // on its own, since anyone can edit the id in the address bar.
+  const requested = lessonId ? getLesson(course, lessonId) : undefined;
+  const lesson = requested && !requested.locked ? requested : nextLesson(course);
   const exam = lesson.examId ? await getExam(lesson.examId) : undefined;
 
   return (
