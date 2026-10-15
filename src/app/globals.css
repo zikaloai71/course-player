@@ -1,16 +1,23 @@
 :root {
   /* Colors — sampled from the Figma design */
   --green: #41b69d;
-  /* Darkened from the design's #359a84 so text on white clears AA (4.8:1). */
-  --green-dark: #2b7f6b;
+  --green-dark: #359a84;
   --green-soft: #f2faf8;
-  /* Only ever used as text on --red-soft, so it carries the darker AA value. */
-  --red: #cf2f4d;
-  /* File and lock icons in the curriculum, dark enough for the 3:1 icon rule. */
-  --gold: #b98c22;
+  --red: #e5556f;
+  /* File and lock icons in the curriculum; decorative, never the only cue. */
+  --gold: #d2a53c;
   --red-soft: #fdf2f4;
+
+  /*
+   * The design's green and red are accents, not reading colours: at 11-14px on
+   * white they sit near 3.5:1. Fills, bars and icons keep the sampled values
+   * above; small text uses these darker twins so it clears 4.5:1.
+   */
+  --green-text: #2b7f6b;
+  --red-text: #cf2f4d;
   --navy: #293652;
   --ink: #181818;
+  /* The design's #8a8f98 reads at 3.2:1, so secondary text is a shade darker. */
   --muted: #6b7280;
   --muted-light: #a9aeb6;
   --band: #f5f9fa;
@@ -134,7 +141,10 @@ h4 {
   padding-inline: var(--s-4);
 }
 
-/* Keyboard users land on this before the breadcrumb. */
+/*
+ * Keyboard users land on this before the breadcrumb. It is ours, not the
+ * design's, so it takes the darker green and clears AA on its own.
+ */
 .skip-link {
   position: absolute;
   top: var(--s-2);
@@ -142,7 +152,7 @@ h4 {
   z-index: 20;
   padding: var(--s-2) var(--s-4);
   border-radius: var(--r-md);
-  background: var(--green-dark);
+  background: var(--green-text);
   color: #fff;
   font-weight: 600;
   transform: translateY(-200%);

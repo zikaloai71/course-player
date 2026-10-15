@@ -19,8 +19,8 @@ export function PdfLesson({ title, url }: { title: string; url: string }) {
       <Image
         src="/images/lesson-poster.webp"
         alt=""
-        width={1280}
-        height={720}
+        width={854}
+        height={569}
         sizes="(max-width: 1023px) 100vw, 65vw"
         priority
       />

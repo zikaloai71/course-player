@@ -4,29 +4,35 @@
   gap: var(--s-3);
 }
 
+/*
+ * The design shows a row of small round icons under the player, like the
+ * social row it replaces, so the label is for assistive tech and the tooltip.
+ */
 .item {
-  display: flex;
-  align-items: center;
-  gap: var(--s-2);
-  min-height: 44px;
-  padding: var(--s-2) var(--s-4);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line-strong);
   border-radius: var(--r-pill);
   background: var(--card);
   color: var(--navy);
-  font-size: 13.5px;
-  font-weight: 600;
-  white-space: nowrap;
   transition:
     border-color 0.2s ease,
+    background 0.2s ease,
     color 0.2s ease;
 }
 
 .item:hover {
   border-color: var(--green);
-  color: var(--green-dark);
+  background: var(--green-soft);
+  color: var(--green-text);
 }
 
 .item svg {
   color: var(--green);
+}
+
+.item:hover svg {
+  color: var(--green-text);
 }

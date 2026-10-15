@@ -41,6 +41,16 @@
   opacity: 0;
 }
 
+/* Fullscreen is a deliberate "show me the controls" state. */
+.stage:fullscreen .bar {
+  opacity: 1;
+}
+
+/*
+ * The design shows a clean poster, so the bar only appears once the lesson is
+ * playing or the player is being used — focus-within keeps it reachable by
+ * keyboard, where hover never happens.
+ */
 .bar {
   position: absolute;
   inset-inline: 0;
@@ -51,6 +61,14 @@
   padding: var(--s-3) var(--s-4);
   color: #fff;
   background: linear-gradient(to top, rgba(24, 24, 24, 0.85), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.stage:hover .bar,
+.stage:focus-within .bar,
+.stage[data-playing] .bar {
+  opacity: 1;
 }
 
 .control {

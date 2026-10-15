@@ -25,7 +25,7 @@
 }
 
 a.lesson:hover .name {
-  color: var(--green-dark);
+  color: var(--green-text);
 }
 
 .badges {
@@ -46,19 +46,19 @@ a.lesson:hover .name {
 
 .questions {
   background: var(--green-soft);
-  color: var(--green-dark);
+  color: var(--green-text);
 }
 
 .minutes {
   background: var(--red-soft);
-  color: var(--red);
+  color: var(--red-text);
 }
 
 /* The lesson the player is showing. */
 .current {
   position: relative;
   font-weight: 600;
-  color: var(--green-dark);
+  color: var(--green-text);
 }
 
 .current::before {

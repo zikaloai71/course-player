@@ -83,7 +83,12 @@ export function VideoPlayer({ src, poster, title }: Props) {
   }
 
   return (
-    <div ref={stage} className={styles.stage} data-wide={wide || undefined}>
+    <div
+      ref={stage}
+      className={styles.stage}
+      data-wide={wide || undefined}
+      data-playing={playing || undefined}
+    >
       <video
         ref={video}
         className={styles.video}
