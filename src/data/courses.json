@@ -14,8 +14,8 @@
     "weeks": [
       {
         "id": "starting-seo-as-your-home-w1",
-        "title": "Week 1-4",
-        "description": "Advanced story telling techniques for writers: Personas, Characters & Plots",
+        "title": "How Search Works",
+        "description": "How search engines crawl, read and rank a page, and what this course will cover.",
         "lessons": [
           {
             "id": "starting-seo-as-your-home-l1",
@@ -81,7 +81,7 @@
       },
       {
         "id": "starting-seo-as-your-home-w2",
-        "title": "Week 5-8",
+        "title": "Keyword Research and Intent",
         "description": "Keyword research, search intent and building a content map that compounds.",
         "lessons": [
           {
@@ -106,7 +106,7 @@
           },
           {
             "id": "starting-seo-as-your-home-l9",
-            "title": "Return Values From Functions",
+            "title": "Long-Tail Keywords That Convert",
             "type": "video",
             "duration": 15,
             "questionsCount": 2,
@@ -148,7 +148,7 @@
       },
       {
         "id": "starting-seo-as-your-home-w3",
-        "title": "Week 9-12",
+        "title": "Technical SEO and Performance",
         "description": "Technical SEO, Core Web Vitals and measuring what the business cares about.",
         "lessons": [
           {
@@ -230,7 +230,7 @@
     "weeks": [
       {
         "id": "modern-javascript-from-scratch-w1",
-        "title": "Week 1-2",
+        "title": "The Language Core",
         "description": "The language core: values, scope and functions.",
         "lessons": [
           {
@@ -277,7 +277,7 @@
       },
       {
         "id": "modern-javascript-from-scratch-w2",
-        "title": "Week 3-4",
+        "title": "Objects and Prototypes",
         "description": "Objects, prototypes and the parts of `this` nobody explains.",
         "lessons": [
           {
@@ -334,7 +334,7 @@
       },
       {
         "id": "modern-javascript-from-scratch-w3",
-        "title": "Week 5-6",
+        "title": "Asynchronous JavaScript",
         "description": "Asynchrony: the event loop, promises and real network code.",
         "lessons": [
           {
@@ -406,7 +406,7 @@
     "weeks": [
       {
         "id": "flutter-for-absolute-beginners-w1",
-        "title": "Week 1",
+        "title": "Getting Started with Widgets",
         "description": "Setting up and understanding the widget tree.",
         "lessons": [
           {
@@ -463,7 +463,7 @@
       },
       {
         "id": "flutter-for-absolute-beginners-w2",
-        "title": "Week 2",
+        "title": "Navigation, State and Data",
         "description": "Navigation, state and talking to an API.",
         "lessons": [
           {
@@ -545,7 +545,7 @@
     "weeks": [
       {
         "id": "advanced-css-layouts-w1",
-        "title": "Week 1-2",
+        "title": "Sizing and Layout Primitives",
         "description": "The box model you thought you knew, and intrinsic sizing.",
         "lessons": [
           {
@@ -622,7 +622,7 @@
       },
       {
         "id": "advanced-css-layouts-w2",
-        "title": "Week 3-4",
+        "title": "Responsive Without Breakpoints",
         "description": "Responsive without breakpoint soup.",
         "lessons": [
           {
@@ -704,7 +704,7 @@
     "weeks": [
       {
         "id": "python-w1",
-        "title": "Week 1",
+        "title": "Python Basics",
         "description": "Everything you need to write your first useful script.",
         "lessons": [
           {
@@ -746,7 +746,7 @@
     "weeks": [
       {
         "id": "react-performance-w1",
-        "title": "Week 1",
+        "title": "Measuring Performance",
         "description": "Measure before you optimise.",
         "lessons": [
           {
@@ -793,7 +793,7 @@
       },
       {
         "id": "react-performance-w2",
-        "title": "Week 2",
+        "title": "Fixing What You Found",
         "description": "Fixes that survive a real codebase.",
         "lessons": [
           {
