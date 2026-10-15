@@ -108,8 +108,10 @@ app ships React, Next and nothing else.
 - Controls carry names (`aria-label`), the open lesson is `aria-current`, the
   exam timer is a polite live region, and the progress bar is a `progressbar`
   with its value.
-- Colours were darkened from the Figma palette so body text clears 4.5:1 and
-  icons clear 3:1.
+- The Figma palette is used as sampled for fills, bars and icons. Small text
+  carries darker twins of the green and red (`--green-text`, `--red-text`) so
+  it clears 4.5:1, and the curriculum's gold icons are decorative — every row
+  they sit on is labelled in text.
 - Animation is dropped for anyone who asks for reduced motion.
 
 ## Measurements
