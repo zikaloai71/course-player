@@ -23,7 +23,7 @@
   margin-top: var(--s-4);
   padding: var(--s-3) var(--s-5);
   border-radius: var(--r-md);
-  background: var(--green);
+  background: var(--green-text);
   color: #fff;
   font-size: 14px;
   font-weight: 600;

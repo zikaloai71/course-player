@@ -46,8 +46,21 @@
   transform: scale(1.06);
 }
 
-.stage:not(:hover) .big[aria-label^="Pause"] svg {
+.stage:not(:hover) .big[aria-label^="Pause"]:not(:focus-visible) svg {
   opacity: 0;
+}
+
+/*
+ * The frame clips anything outside it, so the full-frame button draws its ring
+ * inside; white reads on both the veil and the footage.
+ */
+.big:focus-visible {
+  outline-color: #fff;
+  outline-offset: -4px;
+}
+
+.bar :focus-visible {
+  outline-color: #fff;
 }
 
 /* Fullscreen is a deliberate "show me the controls" state. */

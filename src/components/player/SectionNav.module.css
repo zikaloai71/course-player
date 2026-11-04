@@ -24,13 +24,13 @@
 }
 
 .item:hover {
-  border-color: var(--green);
+  border-color: var(--green-text);
   background: var(--green-soft);
   color: var(--green-text);
 }
 
 .item svg {
-  color: var(--green);
+  color: var(--green-text);
 }
 
 .item:hover svg {

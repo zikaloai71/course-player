@@ -35,7 +35,7 @@
 .send {
   padding: var(--s-3) var(--s-6);
   border-radius: var(--r-pill);
-  background: var(--green);
+  background: var(--green-text);
   color: #fff;
   font-weight: 600;
 }
