@@ -12,6 +12,12 @@
   font-weight: 600;
 }
 
+/* Same as the video's play button: the frame clips a ring drawn outside. */
+.action:focus-visible {
+  outline-color: #fff;
+  outline-offset: -4px;
+}
+
 .action svg {
   color: var(--green);
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Modal } from "@/components/ui/Modal";
+import { Modal, focusOnMount } from "@/components/ui/Modal";
 import { clock } from "@/lib/time";
 import { isCorrect, score, type Answers } from "@/lib/exam";
 import type { Exam } from "@/types/course";
@@ -84,7 +84,7 @@ export function ExamModal({
     <Modal open={open} onClose={onClose} title={exam.title}>
       {handedIn ? (
         <div className={styles.result}>
-          <p className={styles.score}>
+          <p className={styles.score} tabIndex={-1} ref={focusOnMount}>
             {score(exam, answers)} / {exam.questions.length}
           </p>
           <p>
@@ -114,17 +114,24 @@ export function ExamModal({
             <span>
               Question {index + 1} of {exam.questions.length}
             </span>
-            {/* The countdown is read out as it changes, politely. */}
+            {/* A timer is silent by default: reading every second out would
+                talk over the question. Only the last minute is announced. */}
             <span
               className={`${styles.timer} ${left <= 60 ? styles.urgent : ""}`}
               role="timer"
-              aria-live="polite"
             >
               {clock(left)}
             </span>
+            <span className="visually-hidden" role="status">
+              {left <= 60 ? "One minute left" : ""}
+            </span>
           </div>
 
-          <p className={styles.question}>{question.text}</p>
+          {/* Focused when the exam (re)starts, so "Take it again" does not
+              drop focus to the page. */}
+          <p className={styles.question} tabIndex={-1} ref={focusOnMount}>
+            {question.text}
+          </p>
 
           <fieldset className={styles.options}>
             <legend className="visually-hidden">{question.text}</legend>

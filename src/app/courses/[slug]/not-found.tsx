@@ -11,7 +11,7 @@ export default function NotFound() {
       <p style={{ marginBlock: "12px 24px", color: "var(--muted)" }}>
         That course does not exist, or its link has changed.
       </p>
-      <Link href="/courses" style={{ color: "var(--green)", fontWeight: 600 }}>
+      <Link href="/courses" style={{ color: "var(--green-text)", fontWeight: 600 }}>
         Back to courses
       </Link>
     </main>

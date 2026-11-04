@@ -11,6 +11,13 @@ type Props = {
 };
 
 /**
+ * For content that replaces the focused control inside a modal (a form turning
+ * into its confirmation, an exam into its result): without it focus falls back
+ * to <body> and a screen reader says nothing. Stable, so it fires once per mount.
+ */
+export const focusOnMount = (el: HTMLElement | null) => el?.focus();
+
+/**
  * One modal for the whole app, built on <dialog>.showModal(): the browser
  * already gives us the backdrop, the focus trap, the inert page behind and Esc
  * to close, so none of that is written here.

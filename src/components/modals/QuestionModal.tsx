@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Modal } from "@/components/ui/Modal";
+import { Modal, focusOnMount } from "@/components/ui/Modal";
 import styles from "./QuestionModal.module.css";
 
 /** One draft per course, kept for the browser session only. */
@@ -52,7 +52,7 @@ export function QuestionModal({
       title="Ask a Question"
     >
       {sent ? (
-        <p className={styles.sent}>
+        <p className={styles.sent} tabIndex={-1} ref={focusOnMount}>
           <strong>Your question is on its way.</strong>
           Eng. Ali Shaheen answers questions within a day.
         </p>

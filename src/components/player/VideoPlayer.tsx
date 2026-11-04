@@ -131,10 +131,11 @@ export function VideoPlayer({ src, poster, title }: Props) {
           type="range"
           min={0}
           max={duration || 0}
-          step={0.1}
+          step={1}
           value={time}
           onChange={(e) => seek(Number(e.target.value))}
           aria-label="Seek"
+          aria-valuetext={`${clock(time)} of ${clock(duration)}`}
         />
 
         <span className={styles.time}>

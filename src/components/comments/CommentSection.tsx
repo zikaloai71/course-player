@@ -33,7 +33,9 @@ export function CommentSection({
 
   return (
     <>
-      <ul className={styles.list}>
+      {/* The list sits above the form, so a new comment is announced rather
+          than appearing out of sight of a screen reader. */}
+      <ul className={styles.list} aria-live="polite">
         {list.map((comment) => (
           <CommentItem key={comment.id} comment={comment} />
         ))}
